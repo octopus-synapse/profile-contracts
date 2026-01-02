@@ -1,0 +1,36 @@
+{
+ "name": "@efpatti/profile-contracts",
+ "version": "0.0.1",
+ "description": "Shared domain contracts, schemas and types for Profile system",
+ "main": "dist/index.js",
+ "types": "dist/index.d.ts",
+ "publishConfig": {
+  "registry": "https://npm.pkg.github.com"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/efpatti/profile-contracts.git"
+ },
+ "scripts": {
+  "build": "tsc",
+  "test": "jest"
+ },
+ "keywords": [
+  "profile",
+  "contracts",
+  "schema",
+  "zod"
+ ],
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+  "zod": "^3.22.4"
+ },
+ "devDependencies": {
+  "typescript": "^5.3.3",
+  "@types/node": "^20.10.6",
+  "jest": "^29.7.0",
+  "ts-jest": "^29.1.1",
+  "@types/jest": "^29.5.11"
+ }
+}
