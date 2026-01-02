@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { SectionDataSchema } from "./section-data.schema";
 
 // Resolved Style Values (Concrete values, not tokens)
 export const ResolvedTypographySchema = z.object({
@@ -43,6 +44,7 @@ export const PlacedSectionSchema = z.object({
  sectionId: z.string(),
  columnId: z.string(), // Reference to ColumnDefinition.id
  order: z.number(),
+ data: SectionDataSchema, // Resolved data for this section
  // Resolved styles for this specific section instance
  styles: z.object({
   container: ResolvedBoxStyleSchema,

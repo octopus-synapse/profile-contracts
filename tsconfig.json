@@ -7,8 +7,16 @@
   "strict": true,
   "esModuleInterop": true,
   "skipLibCheck": true,
-  "forceConsistentCasingInFileNames": true
+  "forceConsistentCasingInFileNames": true,
+  "moduleResolution": "node",
+  "resolveJsonModule": true
  },
  "include": ["src/**/*"],
- "exclude": ["node_modules", "dist"]
+ "exclude": [
+  "node_modules",
+  "dist",
+  "src/**/__tests__",
+  "src/**/*.test.ts",
+  "src/**/*.fixture.ts"
+ ]
 }
