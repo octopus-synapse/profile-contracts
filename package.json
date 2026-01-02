@@ -1,5 +1,5 @@
 {
- "name": "@efpatti/profile-contracts",
+ "name": "@octopus-synapse/profile-contracts",
  "version": "0.0.1",
  "description": "Shared domain contracts, schemas and types for Profile system",
  "main": "dist/index.js",
@@ -9,7 +9,7 @@
  },
  "repository": {
   "type": "git",
-  "url": "git+https://github.com/efpatti/profile-contracts.git"
+  "url": "git+https://github.com/octopus-synapse/profile-contracts.git"
  },
  "scripts": {
   "build": "tsc",
