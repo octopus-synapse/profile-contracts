@@ -56,20 +56,19 @@ export const PhoneSchema = z
 export type Phone = z.infer<typeof PhoneSchema>;
 
 /**
- * Location Schema
+ * User Location Schema
  *
  * City, State/Province, Country format.
  * Optional field for privacy.
  */
-export const LocationSchema = z
+export const UserLocationSchema = z
  .string()
  .min(2, "Location must be at least 2 characters")
  .max(100, "Location cannot exceed 100 characters")
  .trim()
  .optional();
 
-export type Location = z.infer<typeof LocationSchema>;
-
+export type UserLocation = z.infer<typeof UserLocationSchema>;
 /**
  * Personal Info Complete Schema
  *
@@ -80,7 +79,7 @@ export const PersonalInfoSchema = z.object({
  fullName: FullNameSchema,
  email: EmailSchema,
  phone: PhoneSchema,
- location: LocationSchema,
+ location: UserLocationSchema,
 });
 
 export type PersonalInfo = z.infer<typeof PersonalInfoSchema>;
