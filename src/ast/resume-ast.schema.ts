@@ -68,4 +68,10 @@ export const ResumeAstSchema = z.object({
  }),
 });
 
+// Export all types for frontend consumption
 export type ResumeAst = z.infer<typeof ResumeAstSchema>;
+export type PlacedSection = z.infer<typeof PlacedSectionSchema>;
+export type PageLayout = z.infer<typeof PageLayoutSchema>;
+export type ColumnDefinition = z.infer<typeof ColumnDefinitionSchema>;
+export type ResolvedTypography = z.infer<typeof ResolvedTypographySchema>;
+export type ResolvedBoxStyle = z.infer<typeof ResolvedBoxStyleSchema>;
