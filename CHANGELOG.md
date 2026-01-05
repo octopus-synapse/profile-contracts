@@ -33,4 +33,48 @@ All contract changes (breaking, additions, fixes) will follow SemVer strictly fr
 - TypeScript type exports
 - Schema versioning foundation
 
+---
+
+## [0.0.4] - 2025-01-XX
+
+### Added
+
+- Onboarding validation schemas (`OnboardingDtoSchema`)
+- Personal information validation schemas
+
+### Changed
+
+- **BREAKING**: Renamed `Location` to `UserLocation` to avoid naming conflicts
+
+#### Migration Guide
+
+```typescript
+// Before
+import { Location } from "@octopus-synapse/profile-contracts";
+
+// After
+import { UserLocation } from "@octopus-synapse/profile-contracts";
+```
+
+---
+
+## [0.0.3] - 2025-01-XX
+
+### Added
+
+- Section data schemas
+- Comprehensive test coverage for schemas
+
+---
+
+## [0.0.2] - 2025-01-XX
+
+### Added
+
+- Initial schema exports
+- Basic resume entity types
+- Package configuration for GitHub registry
+
+---
+
 [1.0.0]: https://github.com/octopus-synapse/profile-contracts/releases/tag/v1.0.0
