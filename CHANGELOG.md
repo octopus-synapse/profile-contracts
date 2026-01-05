@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0](https://github.com/octopus-synapse/profile-contracts/compare/v1.0.0...v1.1.0) (2026-01-05)
+
+
+### Features
+
+* add PASSWORD_POLICY and PasswordSchema ([36f9a2a](https://github.com/octopus-synapse/profile-contracts/commit/36f9a2a453e661bcb0627a8c8c9cf1bcb9026c43))
+
 ## [1.0.0] - 2026-01-04
 
 ### Declaration
