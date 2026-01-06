@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.1](https://github.com/octopus-synapse/profile-contracts/compare/v1.2.0...v1.2.1) (2026-01-06)
+
+
+### Bug Fixes
+
+* **release:** reset version to logical PATCH sequence 1.1.2 ([6b8a116](https://github.com/octopus-synapse/profile-contracts/commit/6b8a116f22bbccdd6caa4e3af5640a5740d08ac8))
+
 ## [1.2.0](https://github.com/octopus-synapse/profile-contracts/compare/v1.1.0...v1.2.0) (2026-01-05)
 
 
