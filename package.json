@@ -1,40 +1,40 @@
 {
-  "name": "@octopus-synapse/profile-contracts",
-  "version": "1.2.0",
-  "description": "Shared domain contracts, schemas and types for Profile system",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/octopus-synapse/profile-contracts.git"
-  },
-  "scripts": {
-    "build": "tsc",
-    "test": "jest",
-    "prepare": "husky"
-  },
-  "keywords": [
-    "profile",
-    "contracts",
-    "schema",
-    "zod"
-  ],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "zod": "^3.22.4"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^20.3.0",
-    "@commitlint/config-conventional": "^20.3.0",
-    "@types/jest": "^29.5.11",
-    "@types/node": "^20.10.6",
-    "husky": "^9.1.7",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.1",
-    "typescript": "^5.3.3"
-  }
+ "name": "@octopus-synapse/profile-contracts",
+ "version": "1.1.2",
+ "description": "Shared domain contracts, schemas and types for Profile system",
+ "main": "dist/index.js",
+ "types": "dist/index.d.ts",
+ "publishConfig": {
+  "registry": "https://npm.pkg.github.com"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/octopus-synapse/profile-contracts.git"
+ },
+ "scripts": {
+  "build": "tsc",
+  "test": "jest",
+  "prepare": "husky"
+ },
+ "keywords": [
+  "profile",
+  "contracts",
+  "schema",
+  "zod"
+ ],
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+  "zod": "^3.22.4"
+ },
+ "devDependencies": {
+  "@commitlint/cli": "^20.3.0",
+  "@commitlint/config-conventional": "^20.3.0",
+  "@types/jest": "^29.5.11",
+  "@types/node": "^20.10.6",
+  "husky": "^9.1.7",
+  "jest": "^29.7.0",
+  "ts-jest": "^29.1.1",
+  "typescript": "^5.3.3"
+ }
 }
