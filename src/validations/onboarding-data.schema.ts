@@ -3,6 +3,9 @@
  *
  * Complete payload validation for onboarding submission.
  * Ensures data integrity before API submission.
+ *
+ * IMPORTANT: These schemas are the single source of truth for
+ * profile-backend, profile-frontend, and api-client.
  */
 
 import { z } from "zod";
@@ -11,36 +14,56 @@ import { UsernameSchema } from "./username.schema";
 import { ProfessionalProfileSchema } from "./professional-profile.schema";
 
 /**
+ * Date Format
+ * Backend accepts both YYYY-MM-DD (from date inputs) and YYYY-MM (display)
+ */
+const DateString = z
+ .string()
+ .regex(
+  /^\d{4}-\d{2}(-\d{2})?$/,
+  "Invalid date format (YYYY-MM or YYYY-MM-DD)"
+ );
+
+/**
  * Experience Entry Schema
+ * Aligned with profile-backend CreateExperienceDto
  */
 export const ExperienceSchema = z.object({
- company: z.string().min(1, "Company name is required").max(100),
- position: z.string().min(1, "Position is required").max(100),
- startDate: z.string().regex(/^\d{4}-\d{2}$/, "Invalid date format (YYYY-MM)"),
- endDate: z
+ company: z
   .string()
-  .regex(/^\d{4}-\d{2}$/, "Invalid date format (YYYY-MM)")
-  .optional(),
- current: z.boolean().optional(),
- description: z.string().max(500).optional(),
+  .min(1, "Company name is required")
+  .max(100, "Company name too long"),
+ position: z
+  .string()
+  .min(1, "Position is required")
+  .max(100, "Position too long"),
+ startDate: DateString,
+ endDate: DateString.optional(),
+ isCurrent: z.boolean().default(false),
+ description: z.string().max(2000, "Description too long").optional(),
+ location: z.string().max(100, "Location too long").optional(),
 });
 
 export type Experience = z.infer<typeof ExperienceSchema>;
 
 /**
  * Education Entry Schema
+ * Aligned with profile-backend CreateEducationDto
  */
 export const EducationSchema = z.object({
- institution: z.string().min(1, "Institution is required").max(100),
- degree: z.string().min(1, "Degree is required").max(100),
- field: z.string().max(100).optional(),
- startDate: z.string().regex(/^\d{4}-\d{2}$/, "Invalid date format (YYYY-MM)"),
- endDate: z
+ institution: z
   .string()
-  .regex(/^\d{4}-\d{2}$/, "Invalid date format (YYYY-MM)")
-  .optional(),
- current: z.boolean().optional(),
- gpa: z.string().max(10).optional(),
+  .min(1, "Institution is required")
+  .max(200, "Institution name too long"),
+ degree: z.string().min(1, "Degree is required").max(100, "Degree too long"),
+ field: z
+  .string()
+  .min(1, "Field of study is required")
+  .max(100, "Field too long"),
+ startDate: DateString,
+ endDate: DateString.optional(),
+ isCurrent: z.boolean().default(false),
+ description: z.string().max(1000, "Description too long").optional(),
 });
 
 export type Education = z.infer<typeof EducationSchema>;
@@ -49,8 +72,11 @@ export type Education = z.infer<typeof EducationSchema>;
  * Skill Entry Schema
  */
 export const SkillSchema = z.object({
- name: z.string().min(1, "Skill name is required").max(50),
- category: z.string().max(50).optional(),
+ name: z
+  .string()
+  .min(1, "Skill name is required")
+  .max(50, "Skill name too long"),
+ category: z.string().max(50, "Category too long").optional(),
 });
 
 export type Skill = z.infer<typeof SkillSchema>;
