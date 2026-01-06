@@ -83,10 +83,25 @@ export type Skill = z.infer<typeof SkillSchema>;
 
 /**
  * Language Entry Schema
+ * Aligned with profile-backend CreateLanguageDto
  */
+export const LanguageProficiencyEnum = z.enum([
+ "BASIC",
+ "INTERMEDIATE",
+ "ADVANCED",
+ "FLUENT",
+ "NATIVE",
+]);
+
+export type LanguageProficiency = z.infer<typeof LanguageProficiencyEnum>;
+
 export const LanguageSchema = z.object({
- language: z.string().min(1, "Language is required").max(50),
- proficiency: z.enum(["BASIC", "CONVERSATIONAL", "PROFESSIONAL", "NATIVE"]),
+ name: z
+  .string()
+  .min(1, "Language is required")
+  .max(50, "Language name too long"),
+ level: LanguageProficiencyEnum,
+ cefrLevel: z.string().max(2).optional(),
 });
 
 export type Language = z.infer<typeof LanguageSchema>;
