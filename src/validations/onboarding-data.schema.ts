@@ -99,12 +99,12 @@ export const CefrLevelEnum = z.enum(["A1", "A2", "B1", "B2", "C1", "C2"]);
 export type CefrLevel = z.infer<typeof CefrLevelEnum>;
 
 export const LanguageSchema = z.object({
-  name: z
-    .string()
-    .min(1, "Language is required")
-    .max(50, "Language name too long"),
-  level: LanguageProficiencyEnum,
-  cefrLevel: CefrLevelEnum.optional(),
+ name: z
+  .string()
+  .min(1, "Language is required")
+  .max(50, "Language name too long"),
+ level: LanguageProficiencyEnum,
+ cefrLevel: CefrLevelEnum.optional(),
 });
 
 export type Language = z.infer<typeof LanguageSchema>;
