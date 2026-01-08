@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/octopus-synapse/profile-contracts/compare/v2.0.1...v2.0.2) (2026-01-08)
+
+
+### Bug Fixes
+
+* **release:** use bun for install and build ([99d75bd](https://github.com/octopus-synapse/profile-contracts/commit/99d75bd193efa0b0444cd34b034728aac7fd7f05))
+
 ## [2.0.1](https://github.com/octopus-synapse/profile-contracts/compare/v2.0.0...v2.0.1) (2026-01-08)
 
 
