@@ -2,6 +2,7 @@
  * Personal Info Schema Tests
  */
 
+import { describe, it, expect } from "bun:test";
 import {
  EmailSchema,
  FullNameSchema,

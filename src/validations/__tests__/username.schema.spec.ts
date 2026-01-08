@@ -2,6 +2,7 @@
  * Username Schema Tests
  */
 
+import { describe, it, expect } from "bun:test";
 import {
  UsernameSchema,
  RESERVED_USERNAMES,

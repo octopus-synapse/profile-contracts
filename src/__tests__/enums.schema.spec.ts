@@ -5,6 +5,7 @@
  * These enums are the single source of truth for both frontend and backend.
  */
 
+import { describe, it, expect } from "bun:test";
 import {
  UserRoleSchema,
  UserRoles,

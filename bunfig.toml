@@ -1,0 +1,7 @@
+[test]
+# Test configuration for Bun - Profile Contracts
+root = "./src"
+
+# Coverage configuration
+coverage = true
+coverageDir = "./coverage"

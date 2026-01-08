@@ -1,3 +1,4 @@
+import { describe, it, expect } from "bun:test";
 import { ResumeDslSchema } from "../dsl/resume-dsl.schema";
 import {
  completeResumeDsl,
