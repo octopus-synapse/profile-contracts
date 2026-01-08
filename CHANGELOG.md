@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/octopus-synapse/profile-contracts/compare/v2.0.0...v2.0.1) (2026-01-08)
+
+
+### Bug Fixes
+
+* **ci:** use bun instead of npm ([4b6cdcb](https://github.com/octopus-synapse/profile-contracts/commit/4b6cdcb22100eed512fb20a0e2e2367b19834ab3))
+* **release:** use GITHUB_TOKEN for npm install ([0870ae9](https://github.com/octopus-synapse/profile-contracts/commit/0870ae9a2b8fb96d1226c5f9589b3cae30364369))
+
 ## [2.0.0](https://github.com/octopus-synapse/profile-contracts/compare/v1.2.0...v2.0.0) (2026-01-08)
 
 
