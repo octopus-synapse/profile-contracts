@@ -1,6 +1,6 @@
 {
   "name": "@octopus-synapse/profile-contracts",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Shared domain contracts, schemas and types for Profile system",
   "main": "dist/index.js",
   "module": "dist/index.js",
