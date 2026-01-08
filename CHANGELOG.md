@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/octopus-synapse/profile-contracts/compare/v2.0.2...v3.0.0) (2026-01-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* Bump to v2.1.0 with new extended resume DTOs
+
+### Features
+
+* add extended resume schemas (publications, hackathons, bug bounties, etc) ([bec4db8](https://github.com/octopus-synapse/profile-contracts/commit/bec4db8ada186e56f6eb76ad61b0b3b0eaaf9885))
+
 ## [2.0.2](https://github.com/octopus-synapse/profile-contracts/compare/v2.0.1...v2.0.2) (2026-01-08)
 
 
