@@ -46,3 +46,33 @@ export {
  UpdateResumeSchema,
  type UpdateResume,
 } from "./resume.dto";
+
+// Resume Extended DTOs (Advanced Features)
+export {
+ PublicationTypeEnum,
+ type PublicationType,
+ CreatePublicationSchema,
+ type CreatePublication,
+ CreateRecommendationSchema,
+ type CreateRecommendation,
+ CreateHackathonSchema,
+ type CreateHackathon,
+ BugBountyPlatformEnum,
+ BugBountySeverityEnum,
+ type BugBountyPlatform,
+ type BugBountySeverity,
+ CreateBugBountySchema,
+ type CreateBugBounty,
+ OpenSourceRoleEnum,
+ type OpenSourceRole,
+ CreateOpenSourceSchema,
+ type CreateOpenSource,
+ TalkTypeEnum,
+ type TalkType,
+ CreateTalkSchema,
+ type CreateTalk,
+ CreateAwardSchema,
+ type CreateAward,
+ CreateInterestSchema,
+ type CreateInterest,
+} from "./resume-extended.dto";
