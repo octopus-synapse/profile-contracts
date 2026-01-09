@@ -1,23 +1,14 @@
 name: Auto-add to Project
 
 # Automatically add new issues to Patch Careers project
-# profile-services uses native GitHub Projects automation (default repo)
+# Uses centralized workflow from octopus-workflows
 on:
   issues:
     types: [opened, reopened]
 
-permissions:
-  issues: write
-  contents: read
-
 jobs:
-  add-to-project:
-    name: Add to Patch Careers
-    runs-on: ubuntu-latest
-    steps:
-      - name: Add issue to project
-        uses: actions/add-to-project@v1.0.2
-        with:
-          project-url: https://github.com/orgs/octopus-synapse/projects/1
-          github-token: ${{ secrets.GH_PAT }}
+  call-auto-add:
+    uses: octopus-synapse/octopus-workflows/.github/workflows/auto-add-to-project.yml@main
+    secrets:
+      GH_PAT: ${{ secrets.GH_PAT }}
 
