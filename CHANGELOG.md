@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.3.0...v3.4.0) (2026-01-10)
+
+
+### Features
+
+* **validations:** add env and analytics validation schemas ([a5677ca](https://github.com/octopus-synapse/profile-contracts/commit/a5677ca3a45fa33e1cf2de41aed469d420d6294e))
+
 ## [3.3.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.2.0...v3.3.0) (2026-01-10)
 
 
