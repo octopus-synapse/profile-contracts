@@ -75,3 +75,32 @@ export const PaginationQuerySchema = z.object({
 });
 
 export type PaginationQuery = z.infer<typeof PaginationQuerySchema>;
+
+/**
+ * Paginated Result Schema (Alternative format for data[] structure)
+ * Used by resume sub-resource endpoints
+ */
+export const PaginatedResultSchema = <T extends z.ZodTypeAny>(dataSchema: T) =>
+ z.object({
+  data: z.array(dataSchema),
+  meta: z.object({
+   total: z.number().int().min(0),
+   page: z.number().int().min(1),
+   limit: z.number().int().min(1),
+   totalPages: z.number().int().min(0),
+   hasNextPage: z.boolean(),
+   hasPrevPage: z.boolean(),
+  }),
+ });
+
+export type PaginatedResult<T> = {
+ data: T[];
+ meta: {
+  total: number;
+  page: number;
+  limit: number;
+  totalPages: number;
+  hasNextPage: boolean;
+  hasPrevPage: boolean;
+ };
+};

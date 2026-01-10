@@ -7,6 +7,9 @@ export * from "./types";
 // DTOs (centralized)
 export * from "./dtos";
 
+// Validation Functions & Pipes (consumers use these, NOT Zod directly)
+export * from "./validations";
+
 // DSL Schemas
 export * from "./dsl/layout.schema";
 export * from "./dsl/tokens.schema";
@@ -15,7 +18,7 @@ export * from "./dsl/resume-dsl.schema";
 export * from "./ast/resume-ast.schema";
 export * from "./ast/section-data.schema";
 
-// Domain Validations
+// Domain Validations (specific schemas)
 export * from "./validations/personal-info.schema";
 export * from "./validations/username.schema";
 export * from "./validations/professional-profile.schema";

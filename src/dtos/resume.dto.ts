@@ -31,6 +31,7 @@ export const CreateExperienceSchema = z.object({
  current: z.boolean().default(false),
  description: z.string().max(2000).optional(),
  achievements: z.array(z.string().max(500)).optional(),
+ order: z.number().int().min(0).optional(),
 });
 
 export type CreateExperience = z.infer<typeof CreateExperienceSchema>;
@@ -51,6 +52,7 @@ export const CreateEducationSchema = z.object({
  current: z.boolean().default(false),
  description: z.string().max(1000).optional(),
  gpa: z.string().max(10).optional(),
+ order: z.number().int().min(0).optional(),
 });
 
 export type CreateEducation = z.infer<typeof CreateEducationSchema>;
@@ -62,6 +64,7 @@ export const CreateSkillSchema = z.object({
  name: z.string().min(1, "Skill name is required").max(50),
  level: SkillLevelSchema,
  category: z.string().max(50).optional(),
+ order: z.number().int().min(0).optional(),
 });
 
 export type CreateSkill = z.infer<typeof CreateSkillSchema>;
@@ -73,6 +76,7 @@ export const CreateLanguageSchema = z.object({
  name: z.string().min(1, "Language is required").max(50),
  level: LanguageProficiencyEnum,
  cefrLevel: CefrLevelEnum.optional(),
+ order: z.number().int().min(0).optional(),
 });
 
 export type CreateLanguage = z.infer<typeof CreateLanguageSchema>;
@@ -93,6 +97,7 @@ export const CreateCertificationSchema = z.object({
   .optional(),
  credentialId: z.string().max(100).optional(),
  credentialUrl: z.string().url().optional(),
+ order: z.number().int().min(0).optional(),
 });
 
 export type CreateCertification = z.infer<typeof CreateCertificationSchema>;
@@ -114,6 +119,7 @@ export const CreateProjectSchema = z.object({
   .optional(),
  highlights: z.array(z.string().max(500)).optional(),
  technologies: z.array(z.string().max(50)).optional(),
+ order: z.number().int().min(0).optional(),
 });
 
 export type CreateProject = z.infer<typeof CreateProjectSchema>;

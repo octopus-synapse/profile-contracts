@@ -57,4 +57,6 @@ export {
  type PaginatedResponse,
  PaginationQuerySchema,
  type PaginationQuery,
+ PaginatedResultSchema,
+ type PaginatedResult,
 } from "./api.types";
