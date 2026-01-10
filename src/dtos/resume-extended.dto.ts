@@ -223,3 +223,36 @@ export const CreateInterestSchema = z.object({
 });
 
 export type CreateInterest = z.infer<typeof CreateInterestSchema>;
+
+/**
+ * Achievement Type Enum
+ * Represents different types of professional achievements.
+ */
+export const AchievementTypeEnum = z.enum([
+ "github_stars",
+ "kaggle_medal",
+ "ctf_win",
+ "bug_bounty",
+ "certification",
+ "custom",
+]);
+
+export type AchievementType = z.infer<typeof AchievementTypeEnum>;
+
+/**
+ * Achievement Schema
+ * For gamification-style achievements (GitHub stars, Kaggle medals, CTF wins, etc.)
+ */
+export const CreateAchievementSchema = z.object({
+ type: AchievementTypeEnum,
+ title: z.string().min(1, "Title is required").max(200, "Title too long"),
+ description: z.string().max(2000, "Description too long").optional(),
+ badgeUrl: z.string().url("Invalid badge URL").optional(),
+ verificationUrl: z.string().url("Invalid verification URL").optional(),
+ achievedAt: DateString,
+ value: z.number().int().min(0).optional(),
+ rank: z.string().max(100, "Rank too long").optional(),
+ order: z.number().int().min(0).default(0),
+});
+
+export type CreateAchievement = z.infer<typeof CreateAchievementSchema>;

@@ -17,6 +17,16 @@ export {
  type NewPassword,
  ChangePasswordSchema,
  type ChangePassword,
+ ChangeEmailSchema,
+ type ChangeEmail,
+ RefreshTokenSchema,
+ type RefreshToken,
+ DeleteAccountSchema,
+ type DeleteAccount,
+ EmailVerificationSchema,
+ type EmailVerification,
+ RequestVerificationSchema,
+ type RequestVerification,
 } from "./auth.dto";
 
 // User DTOs
@@ -75,4 +85,70 @@ export {
  type CreateAward,
  CreateInterestSchema,
  type CreateInterest,
+ AchievementTypeEnum,
+ type AchievementType,
+ CreateAchievementSchema,
+ type CreateAchievement,
 } from "./resume-extended.dto";
+
+// Common DTOs (Utilities)
+export {
+ PaginationQuerySchema,
+ type PaginationQuery,
+ ReorderItemsSchema,
+ type ReorderItems,
+ DateStringSchema,
+ type DateString,
+ IdParamSchema,
+ type IdParam,
+ SearchQuerySchema,
+ type SearchQuery,
+} from "./common.dto";
+
+// Admin DTOs (Backend-specific)
+export {
+ AdminCreateUserSchema,
+ type AdminCreateUser,
+ AdminUpdateUserSchema,
+ type AdminUpdateUser,
+ AdminResetPasswordSchema,
+ type AdminResetPassword,
+} from "./admin.dto";
+
+// User Profile DTOs
+export {
+ UpdateProfileSchema,
+ type UpdateProfile,
+ UpdatePreferencesSchema,
+ type UpdatePreferences,
+ UpdateFullPreferencesSchema,
+ type UpdateFullPreferences,
+ UpdateUsernameSchema,
+ type UpdateUsername,
+} from "./user-profile.dto";
+
+// Theme DTOs
+export {
+ ThemeSortFieldSchema,
+ type ThemeSortField,
+ SortDirectionSchema,
+ type SortDirection,
+ CreateThemeSchema,
+ type CreateTheme,
+ UpdateThemeSchema,
+ type UpdateTheme,
+ QueryThemesSchema,
+ type QueryThemes,
+ ThemeApplicationSchema,
+ type ThemeApplication,
+ ThemeApprovalSchema,
+ type ThemeApproval,
+} from "./theme.dto";
+
+// Onboarding Progress DTOs
+export {
+ OnboardingStepSchema,
+ type OnboardingStep,
+ OnboardingProgressSchema,
+ type OnboardingProgress,
+} from "./onboarding-progress.dto";

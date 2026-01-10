@@ -63,3 +63,49 @@ export const ChangePasswordSchema = z.object({
 });
 
 export type ChangePassword = z.infer<typeof ChangePasswordSchema>;
+
+/**
+ * Change Email Schema
+ */
+export const ChangeEmailSchema = z.object({
+ newEmail: EmailSchema,
+ currentPassword: z.string().min(1, "Password is required"),
+});
+
+export type ChangeEmail = z.infer<typeof ChangeEmailSchema>;
+
+/**
+ * Refresh Token Schema
+ */
+export const RefreshTokenSchema = z.object({
+ refreshToken: z.string().min(1, "Refresh token is required"),
+});
+
+export type RefreshToken = z.infer<typeof RefreshTokenSchema>;
+
+/**
+ * Delete Account Schema
+ */
+export const DeleteAccountSchema = z.object({
+ password: z.string().min(1, "Password is required"),
+});
+
+export type DeleteAccount = z.infer<typeof DeleteAccountSchema>;
+
+/**
+ * Email Verification Schema
+ */
+export const EmailVerificationSchema = z.object({
+ token: z.string().min(1, "Verification token is required"),
+});
+
+export type EmailVerification = z.infer<typeof EmailVerificationSchema>;
+
+/**
+ * Request Verification Schema
+ */
+export const RequestVerificationSchema = z.object({
+ email: EmailSchema,
+});
+
+export type RequestVerification = z.infer<typeof RequestVerificationSchema>;
