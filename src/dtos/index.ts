@@ -139,10 +139,15 @@ export {
  type UpdateTheme,
  QueryThemesSchema,
  type QueryThemes,
- ThemeApplicationSchema,
- type ThemeApplication,
- ThemeApprovalSchema,
- type ThemeApproval,
+  ThemeApplicationSchema,
+  type ThemeApplication,
+  ThemeApprovalSchema,
+  type ThemeApproval,
+  ApplyThemeToResumeSchema,
+  type ApplyThemeToResume,
+  ForkThemeSchema,
+  type ForkTheme,
+  type ReviewTheme,
 } from "./theme.dto";
 
 // Onboarding Progress DTOs
@@ -199,3 +204,89 @@ export {
  ScoreProgressionResponseSchema,
  type ScoreProgressionResponse,
 } from "./analytics.dto";
+
+// Resume Update DTOs
+export {
+ UpdateExperienceSchema,
+ type UpdateExperience,
+ UpdateEducationSchema,
+ type UpdateEducation,
+ UpdateSkillSchema,
+ type UpdateSkill,
+ UpdateLanguageSchema,
+ type UpdateLanguage,
+ UpdateCertificationSchema,
+ type UpdateCertification,
+  UpdateProjectSchema,
+  type UpdateProject,
+  BulkCreateSkillsSchema,
+  type BulkCreateSkills,
+} from "./resume.dto";
+
+// Resume Extended Update DTOs
+export {
+ UpdatePublicationSchema,
+ type UpdatePublication,
+ UpdateRecommendationSchema,
+ type UpdateRecommendation,
+ UpdateHackathonSchema,
+ type UpdateHackathon,
+ UpdateBugBountySchema,
+ type UpdateBugBounty,
+ UpdateOpenSourceSchema,
+ type UpdateOpenSource,
+ UpdateTalkSchema,
+ type UpdateTalk,
+ UpdateAwardSchema,
+ type UpdateAward,
+ UpdateInterestSchema,
+ type UpdateInterest,
+ UpdateAchievementSchema,
+ type UpdateAchievement,
+} from "./resume-extended.dto";
+
+// Translation DTOs
+export {
+ TranslateTextSchema,
+ type TranslateText,
+ TranslateBatchSchema,
+ type TranslateBatch,
+} from "./translation.dto";
+
+// ATS DTOs
+export {
+ ValidateCVSchema,
+ type ValidateCV,
+ ValidationIssueSchema,
+ type ValidationIssue,
+ ValidationResponseSchema,
+ type ValidationResponse,
+} from "./ats.dto";
+
+// MEC DTOs
+export {
+ InstitutionSchema,
+ type Institution,
+ CourseBasicSchema,
+ type CourseBasic,
+ InstitutionWithCoursesSchema,
+ type InstitutionWithCourses,
+ InstitutionBasicSchema,
+ type InstitutionBasic,
+ CourseSchema,
+ type Course,
+ GrauCountSchema,
+ type GrauCount,
+ UfCountSchema,
+ type UfCount,
+ MecStatsSchema,
+ type MecStats,
+ SyncResultSchema,
+ type SyncResult,
+ SyncMetadataSchema,
+ type SyncMetadata,
+ SyncLogSchema,
+ type SyncLog,
+ SyncStatusSchema,
+ type SyncStatus,
+} from "./mec.dto";

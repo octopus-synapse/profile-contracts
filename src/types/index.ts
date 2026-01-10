@@ -43,8 +43,17 @@ export {
  type ResumeLanguage,
  ResumeCertificationSchema,
  type ResumeCertification,
- ResumeProjectSchema,
- type ResumeProject,
+  ResumeProjectSchema,
+  type ResumeProject,
+  ResumeRecommendationSchema,
+  type ResumeRecommendation,
+  type ExperienceResponse,
+  type EducationResponse,
+  type SkillResponse,
+  type LanguageResponse,
+  type CertificationResponse,
+  type ProjectResponse,
+  type RecommendationResponse,
 } from "./resume.types";
 
 // API types

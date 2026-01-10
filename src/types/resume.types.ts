@@ -166,3 +166,33 @@ export const ResumeListItemSchema = ResumeSchema.omit({
 });
 
 export type ResumeListItem = z.infer<typeof ResumeListItemSchema>;
+
+/**
+ * Resume Recommendation Schema (for API responses)
+ */
+export const ResumeRecommendationSchema = z.object({
+  id: z.string().uuid(),
+  resumeId: z.string().uuid(),
+  author: z.string(),
+  position: z.string().nullable(),
+  company: z.string().nullable(),
+  content: z.string(),
+  date: z.string().nullable(),
+  order: z.number().int().min(0),
+  createdAt: z.string().datetime(),
+  updatedAt: z.string().datetime(),
+});
+
+export type ResumeRecommendation = z.infer<typeof ResumeRecommendationSchema>;
+
+/**
+ * Response DTOs (aliases for API responses)
+ * These are aliases for the Resume* types to maintain consistent naming
+ */
+export type ExperienceResponse = ResumeExperience;
+export type EducationResponse = ResumeEducation;
+export type SkillResponse = ResumeSkill;
+export type LanguageResponse = ResumeLanguage;
+export type CertificationResponse = ResumeCertification;
+export type ProjectResponse = ResumeProject;
+export type RecommendationResponse = ResumeRecommendation;

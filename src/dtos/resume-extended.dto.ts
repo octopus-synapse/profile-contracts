@@ -262,3 +262,34 @@ export const CreateAchievementSchema = z.object({
 });
 
 export type CreateAchievement = z.infer<typeof CreateAchievementSchema>;
+
+// ============================================================================
+// Update DTOs (Partial versions)
+// ============================================================================
+
+export const UpdatePublicationSchema = CreatePublicationSchema.partial();
+export type UpdatePublication = z.infer<typeof UpdatePublicationSchema>;
+
+export const UpdateRecommendationSchema = CreateRecommendationSchema.partial();
+export type UpdateRecommendation = z.infer<typeof UpdateRecommendationSchema>;
+
+export const UpdateHackathonSchema = CreateHackathonSchema.partial();
+export type UpdateHackathon = z.infer<typeof UpdateHackathonSchema>;
+
+export const UpdateBugBountySchema = CreateBugBountySchema.partial();
+export type UpdateBugBounty = z.infer<typeof UpdateBugBountySchema>;
+
+export const UpdateOpenSourceSchema = CreateOpenSourceSchema.partial();
+export type UpdateOpenSource = z.infer<typeof UpdateOpenSourceSchema>;
+
+export const UpdateTalkSchema = CreateTalkSchema.partial();
+export type UpdateTalk = z.infer<typeof UpdateTalkSchema>;
+
+export const UpdateAwardSchema = CreateAwardSchema.partial();
+export type UpdateAward = z.infer<typeof UpdateAwardSchema>;
+
+export const UpdateInterestSchema = CreateInterestSchema.partial();
+export type UpdateInterest = z.infer<typeof UpdateInterestSchema>;
+
+export const UpdateAchievementSchema = CreateAchievementSchema.partial();
+export type UpdateAchievement = z.infer<typeof UpdateAchievementSchema>;

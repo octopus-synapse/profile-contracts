@@ -161,3 +161,53 @@ export type CreateResume = z.infer<typeof CreateResumeSchema>;
 export const UpdateResumeSchema = CreateResumeSchema.partial();
 
 export type UpdateResume = z.infer<typeof UpdateResumeSchema>;
+
+// ============================================================================
+// Update DTOs (Partial versions of Create DTOs)
+// ============================================================================
+
+export const UpdateExperienceSchema = CreateExperienceSchema.partial();
+export type UpdateExperience = z.infer<typeof UpdateExperienceSchema>;
+
+export const UpdateEducationSchema = CreateEducationSchema.partial();
+export type UpdateEducation = z.infer<typeof UpdateEducationSchema>;
+
+export const UpdateSkillSchema = CreateSkillSchema.partial();
+export type UpdateSkill = z.infer<typeof UpdateSkillSchema>;
+
+export const UpdateLanguageSchema = CreateLanguageSchema.partial();
+export type UpdateLanguage = z.infer<typeof UpdateLanguageSchema>;
+
+export const UpdateCertificationSchema = CreateCertificationSchema.partial();
+export type UpdateCertification = z.infer<typeof UpdateCertificationSchema>;
+
+export const UpdateProjectSchema = CreateProjectSchema.partial();
+export type UpdateProject = z.infer<typeof UpdateProjectSchema>;
+
+/**
+ * Bulk Create Skills Schema
+ * Used for creating multiple skills at once
+ */
+export const BulkCreateSkillsSchema = z.object({
+  skills: z.array(CreateSkillSchema).min(1, 'At least one skill is required'),
+});
+
+export type BulkCreateSkills = z.infer<typeof BulkCreateSkillsSchema>;
+
+// ============================================================================
+// CONSTANTS & HELPERS
+// ============================================================================
+
+export const RESUME_RELATION_KEYS = [
+ "experiences",
+ "educations",
+ "skills",
+ "languages",
+ "certifications",
+ "projects",
+] as const;
+
+export type ResumeRelationKey = (typeof RESUME_RELATION_KEYS)[number];
+
+export type CreateResumeData = Omit<CreateResume, ResumeRelationKey>;
+export type UpdateResumeData = Omit<UpdateResume, ResumeRelationKey>;

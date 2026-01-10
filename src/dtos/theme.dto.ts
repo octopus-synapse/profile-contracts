@@ -100,3 +100,30 @@ export const ThemeApprovalSchema = z.object({
 });
 
 export type ThemeApproval = z.infer<typeof ThemeApprovalSchema>;
+
+/**
+ * Apply Theme to Resume Schema
+ */
+export const ApplyThemeToResumeSchema = z.object({
+  resumeId: z.string().uuid('Resume ID must be a valid UUID'),
+  themeId: z.string().uuid('Theme ID must be a valid UUID'),
+  customizations: z.record(z.unknown()).optional(),
+});
+
+export type ApplyThemeToResume = z.infer<typeof ApplyThemeToResumeSchema>;
+
+/**
+ * Fork Theme Schema
+ */
+export const ForkThemeSchema = z.object({
+  themeId: z.string().uuid('Theme ID must be a valid UUID'),
+  name: z.string().min(3, 'Name must be at least 3 characters').max(50, 'Name too long'),
+  description: z.string().max(500, 'Description too long').optional(),
+});
+
+export type ForkTheme = z.infer<typeof ForkThemeSchema>;
+
+/**
+ * Review Theme Schema (alias for ThemeApproval)
+ */
+export type ReviewTheme = ThemeApproval;
