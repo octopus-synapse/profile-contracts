@@ -10,6 +10,9 @@ export * from "./dtos";
 // Validation Functions & Pipes (consumers use these, NOT Zod directly)
 export * from "./validations";
 
+// GraphQL Integration Utilities
+export * from "./graphql";
+
 // DSL Schemas
 export * from "./dsl/layout.schema";
 export * from "./dsl/tokens.schema";

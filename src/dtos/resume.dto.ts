@@ -31,6 +31,7 @@ export const CreateExperienceSchema = z.object({
  current: z.boolean().default(false),
  description: z.string().max(2000).optional(),
  achievements: z.array(z.string().max(500)).optional(),
+ skills: z.array(z.string().max(50)).optional(),
  order: z.number().int().min(0).optional(),
 });
 
