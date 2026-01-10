@@ -27,6 +27,7 @@ export * from "./validations/username.schema";
 export * from "./validations/professional-profile.schema";
 export * from "./validations/onboarding-data.schema";
 export * from "./validations/password-policy.schema";
+export * from "./validations/env.schema";
 
 // Generated (Prisma sync)
 export * from "./generated/prisma-enums";

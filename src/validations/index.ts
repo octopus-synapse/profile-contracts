@@ -443,3 +443,36 @@ export const requestVerificationValidationPipe = createPipeFromSchema(
 export const validateOnboardingData = createValidator(OnboardingDataSchema);
 export const onboardingDataValidationPipe =
  createPipeFromSchema(OnboardingDataSchema);
+
+// ============================================================================
+// ANALYTICS VALIDATORS & PIPES
+// ============================================================================
+
+import {
+ TrackViewSchema,
+ ViewStatsQuerySchema,
+ KeywordOptionsSchema,
+ JobMatchSchema,
+ BenchmarkOptionsSchema,
+ HistoryQuerySchema,
+} from "../dtos/analytics.dto";
+
+// Analytics validators
+export const validateTrackView = createValidator(TrackViewSchema);
+export const validateViewStatsQuery = createValidator(ViewStatsQuerySchema);
+export const validateKeywordOptions = createValidator(KeywordOptionsSchema);
+export const validateJobMatch = createValidator(JobMatchSchema);
+export const validateBenchmarkOptions = createValidator(BenchmarkOptionsSchema);
+export const validateHistoryQuery = createValidator(HistoryQuerySchema);
+
+// Analytics pipes
+export const trackViewValidationPipe = createPipeFromSchema(TrackViewSchema);
+export const viewStatsQueryValidationPipe =
+ createPipeFromSchema(ViewStatsQuerySchema);
+export const keywordOptionsValidationPipe =
+ createPipeFromSchema(KeywordOptionsSchema);
+export const jobMatchValidationPipe = createPipeFromSchema(JobMatchSchema);
+export const benchmarkOptionsValidationPipe =
+ createPipeFromSchema(BenchmarkOptionsSchema);
+export const historyQueryValidationPipe =
+ createPipeFromSchema(HistoryQuerySchema);
