@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.2.0...v3.3.0) (2026-01-10)
+
+
+### Features
+
+* **graphql:** add GraphQL integration utilities and extend experience schema ([8f53225](https://github.com/octopus-synapse/profile-contracts/commit/8f53225e31d4434bcc5756254fd63b760e0a8aa9))
+
 ## [3.2.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.1.0...v3.2.0) (2026-01-10)
 
 
