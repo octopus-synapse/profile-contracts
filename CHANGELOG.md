@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.1.0...v3.2.0) (2026-01-10)
+
+
+### Features
+
+* **validations:** add validation pipes and validators for NestJS integration ([5eb88cd](https://github.com/octopus-synapse/profile-contracts/commit/5eb88cd8e770d6ba99dfbe2c359f3135e5ae4213))
+
 ## [3.1.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.0.0...v3.1.0) (2026-01-10)
 
 
