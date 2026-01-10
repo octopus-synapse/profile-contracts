@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.0.0...v3.1.0) (2026-01-10)
+
+
+### Features
+
+* add complete validation schemas for profile-services migration ([a7cddc6](https://github.com/octopus-synapse/profile-contracts/commit/a7cddc6269ac787d1c173a1579e07a9a5a983543))
+
 ## [3.0.0](https://github.com/octopus-synapse/profile-contracts/compare/v2.0.2...v3.0.0) (2026-01-08)
 
 
