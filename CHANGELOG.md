@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.5.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.4.0...v3.5.0) (2026-01-10)
+
+
+### Features
+
+* add shared constants and extend DTO library ([45588d0](https://github.com/octopus-synapse/profile-contracts/commit/45588d0337e65f9652fd504a340a10b8d97e70f6))
+
 ## [3.4.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.3.0...v3.4.0) (2026-01-10)
 
 
