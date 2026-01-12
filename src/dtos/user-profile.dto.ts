@@ -6,12 +6,12 @@
  */
 
 import { z } from "zod";
-import {
- EmailSchema,
- PhoneSchema,
- UserLocationSchema,
-} from "../validations/personal-info.schema";
+import { EmailSchema } from "../schemas/primitives";
 import { UsernameSchema } from "../validations/username.schema";
+
+// Local schemas
+const PhoneSchema = z.string().max(20).optional();
+const UserLocationSchema = z.string().max(100).optional();
 
 /**
  * URL Schema for profile links

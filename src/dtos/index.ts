@@ -5,7 +5,7 @@
  * Both frontend and backend must import from here.
  */
 
-// Auth DTOs
+// Auth DTOs (re-exported from schemas for backward compatibility)
 export {
  LoginCredentialsSchema,
  type LoginCredentials,
@@ -27,7 +27,11 @@ export {
  type EmailVerification,
  RequestVerificationSchema,
  type RequestVerification,
-} from "./auth.dto";
+ // Type aliases for backward compatibility
+ type ForgotPassword,
+ type ResetPassword,
+ type VerifyEmail,
+} from "../schemas/auth";
 
 // User DTOs
 export {
@@ -139,15 +143,15 @@ export {
  type UpdateTheme,
  QueryThemesSchema,
  type QueryThemes,
-  ThemeApplicationSchema,
-  type ThemeApplication,
-  ThemeApprovalSchema,
-  type ThemeApproval,
-  ApplyThemeToResumeSchema,
-  type ApplyThemeToResume,
-  ForkThemeSchema,
-  type ForkTheme,
-  type ReviewTheme,
+ ThemeApplicationSchema,
+ type ThemeApplication,
+ ThemeApprovalSchema,
+ type ThemeApproval,
+ ApplyThemeToResumeSchema,
+ type ApplyThemeToResume,
+ ForkThemeSchema,
+ type ForkTheme,
+ type ReviewTheme,
 } from "./theme.dto";
 
 // Onboarding Progress DTOs
@@ -217,10 +221,10 @@ export {
  type UpdateLanguage,
  UpdateCertificationSchema,
  type UpdateCertification,
-  UpdateProjectSchema,
-  type UpdateProject,
-  BulkCreateSkillsSchema,
-  type BulkCreateSkills,
+ UpdateProjectSchema,
+ type UpdateProject,
+ BulkCreateSkillsSchema,
+ type BulkCreateSkills,
 } from "./resume.dto";
 
 // Resume Extended Update DTOs
@@ -261,6 +265,7 @@ export {
  type ValidationIssue,
  ValidationResponseSchema,
  type ValidationResponse,
+ type Validation,
 } from "./ats.dto";
 
 // MEC DTOs

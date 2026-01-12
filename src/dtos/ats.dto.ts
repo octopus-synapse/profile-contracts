@@ -37,3 +37,9 @@ export const ValidationResponseSchema = z.object({
 });
 
 export type ValidationResponse = z.infer<typeof ValidationResponseSchema>;
+
+/**
+ * Validation (alias for ValidationResponse)
+ * For backward compatibility
+ */
+export type Validation = ValidationResponse;

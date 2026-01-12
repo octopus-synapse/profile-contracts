@@ -1,15 +1,15 @@
 import { z } from "zod";
-import {
- FullNameSchema,
- PhoneSchema,
- UserLocationSchema,
-} from "../validations/personal-info.schema";
 import { UsernameSchema } from "../validations/username.schema";
 import {
  SocialUrlSchema,
  LinkedInUrlSchema,
  GitHubUrlSchema,
 } from "../validations/professional-profile.schema";
+
+// Local schemas (TODO: move to schemas/primitives if needed)
+const FullNameSchema = z.string().trim().min(2, "Name must be at least 2 characters").max(100);
+const PhoneSchema = z.string().max(20).optional();
+const UserLocationSchema = z.string().max(100).optional();
 
 /**
  * User DTOs

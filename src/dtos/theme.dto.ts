@@ -95,8 +95,10 @@ export type ThemeApplication = z.infer<typeof ThemeApplicationSchema>;
  * Theme Approval Schema
  */
 export const ThemeApprovalSchema = z.object({
+ themeId: z.string().cuid("Theme ID must be a valid CUID"),
  approved: z.boolean(),
  feedback: z.string().max(1000, "Feedback too long").optional(),
+ rejectionReason: z.string().max(500, "Rejection reason too long").optional(),
 });
 
 export type ThemeApproval = z.infer<typeof ThemeApprovalSchema>;
@@ -105,9 +107,9 @@ export type ThemeApproval = z.infer<typeof ThemeApprovalSchema>;
  * Apply Theme to Resume Schema
  */
 export const ApplyThemeToResumeSchema = z.object({
-  resumeId: z.string().uuid('Resume ID must be a valid UUID'),
-  themeId: z.string().uuid('Theme ID must be a valid UUID'),
-  customizations: z.record(z.unknown()).optional(),
+ resumeId: z.string().uuid("Resume ID must be a valid UUID"),
+ themeId: z.string().uuid("Theme ID must be a valid UUID"),
+ customizations: z.record(z.unknown()).optional(),
 });
 
 export type ApplyThemeToResume = z.infer<typeof ApplyThemeToResumeSchema>;
@@ -116,9 +118,12 @@ export type ApplyThemeToResume = z.infer<typeof ApplyThemeToResumeSchema>;
  * Fork Theme Schema
  */
 export const ForkThemeSchema = z.object({
-  themeId: z.string().uuid('Theme ID must be a valid UUID'),
-  name: z.string().min(3, 'Name must be at least 3 characters').max(50, 'Name too long'),
-  description: z.string().max(500, 'Description too long').optional(),
+ themeId: z.string().uuid("Theme ID must be a valid UUID"),
+ name: z
+  .string()
+  .min(3, "Name must be at least 3 characters")
+  .max(50, "Name too long"),
+ description: z.string().max(500, "Description too long").optional(),
 });
 
 export type ForkTheme = z.infer<typeof ForkThemeSchema>;

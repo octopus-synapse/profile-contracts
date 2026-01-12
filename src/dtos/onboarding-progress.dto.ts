@@ -6,10 +6,10 @@
  */
 
 import { z } from "zod";
-import { PersonalInfoSchema } from "../validations/personal-info.schema";
 import { UsernameSchema } from "../validations/username.schema";
 import { ProfessionalProfileSchema } from "../validations/professional-profile.schema";
 import {
+ PersonalInfoSchema,
  ExperienceSchema,
  EducationSchema,
  SkillSchema,

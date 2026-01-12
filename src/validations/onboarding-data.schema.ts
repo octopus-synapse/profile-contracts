@@ -9,9 +9,17 @@
  */
 
 import { z } from "zod";
-import { PersonalInfoSchema } from "./personal-info.schema";
+import { EmailSchema } from "../schemas/primitives";
 import { UsernameSchema } from "./username.schema";
 import { ProfessionalProfileSchema } from "./professional-profile.schema";
+
+// PersonalInfoSchema (exported for onboarding-progress.dto.ts)
+export const PersonalInfoSchema = z.object({
+  fullName: z.string().trim().min(2, "Name must be at least 2 characters").max(100),
+  email: EmailSchema,
+  phone: z.string().max(20).optional(),
+  location: z.string().max(100).optional(),
+});
 
 /**
  * Date Format

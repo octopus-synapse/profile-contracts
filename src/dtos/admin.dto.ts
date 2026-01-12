@@ -6,12 +6,11 @@
  */
 
 import { z } from "zod";
-import {
- EmailSchema,
- FullNameSchema,
-} from "../validations/personal-info.schema";
-import { PasswordSchema } from "../validations/password-policy.schema";
+import { EmailSchema, PasswordSchema } from "../schemas/primitives";
 import { UserRoleSchema } from "../enums/user-role.enum";
+
+// Local schemas
+const FullNameSchema = z.string().trim().min(2, "Name must be at least 2 characters").max(100);
 
 /**
  * Create User Schema (Admin)
