@@ -8,6 +8,7 @@
 export * from "./user-role.enum";
 export * from "./skill-level.enum";
 export * from "./resume-status.enum";
+export * from "./collaborator-role.enum";
 
 // Re-export Prisma-synced enums for convenience
 export {
