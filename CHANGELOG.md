@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.6.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.5.0...v3.6.0) (2026-01-14)
+
+
+### Features
+
+* add consent/GDPR validation schemas ([bd2a503](https://github.com/octopus-synapse/profile-contracts/commit/bd2a50374c7f679d8350dc0a52021594dc7e503a))
+* centralize validation schemas and add chat DTOs ([e9ebdb4](https://github.com/octopus-synapse/profile-contracts/commit/e9ebdb4fbb9605fd2827db377ad44f0b3cb14158))
+* **enums:** add CollaboratorRole enum for resume sharing ([868f01e](https://github.com/octopus-synapse/profile-contracts/commit/868f01eeacf3b73892febf0a079a362584580247))
+
 ## [3.5.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.4.0...v3.5.0) (2026-01-10)
 
 
