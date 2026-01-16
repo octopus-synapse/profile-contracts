@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.0.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.6.0...v4.0.0) (2026-01-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* resume section schemas moved to sections/ subdirectory
+
+### Features
+
+* add advanced section schemas with TDD tests ([b7072a1](https://github.com/octopus-synapse/profile-contracts/commit/b7072a15885150cc45c3fc1114e7d351a46d00e7))
+* implement RBAC authorization schemas and DTOs ([d03d16e](https://github.com/octopus-synapse/profile-contracts/commit/d03d16ef70bd5ba5c4123b45f312fcdb9a49c1b5))
+* **schemas:** add user-fields primitives for FullName, Phone, UserLocation ([cadfccf](https://github.com/octopus-synapse/profile-contracts/commit/cadfccfb5ae594e086f59eafb61587688fe02075))
+
 ## [3.6.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.5.0...v3.6.0) (2026-01-14)
 
 
