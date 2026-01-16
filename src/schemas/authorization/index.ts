@@ -3,6 +3,8 @@
  *
  * Zod schemas and TypeScript types for the RBAC authorization system.
  * This is the source of truth for permission, role, and group definitions.
+ *
+ * @packageDocumentation
  */
 
 export * from "./permission.schema";
