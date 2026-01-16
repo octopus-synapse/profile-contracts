@@ -295,3 +295,6 @@ export {
  SyncStatusSchema,
  type SyncStatus,
 } from "./mec.dto";
+
+// Authorization DTOs
+export * from "./authorization.dto";

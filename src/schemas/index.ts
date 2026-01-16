@@ -14,3 +14,4 @@ export * from "./primitives";
 export * from "./auth";
 export * from "./resume";
 export * from "./consent";
+export * from "./authorization";
