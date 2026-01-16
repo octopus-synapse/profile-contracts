@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/octopus-synapse/profile-contracts/compare/v4.0.0...v4.0.1) (2026-01-16)
+
+
+### Bug Fixes
+
+* **authorization:** add missing [@package](https://github.com/package)Documentation tag to barrel export ([c435e3b](https://github.com/octopus-synapse/profile-contracts/commit/c435e3be036fb6b36fe389581f576226a57913e4))
+
 ## [4.0.0](https://github.com/octopus-synapse/profile-contracts/compare/v3.6.0...v4.0.0) (2026-01-16)
 
 
