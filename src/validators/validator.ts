@@ -10,7 +10,7 @@
  * - Open/Closed: Extensible via schema composition, not modification
  */
 
-import type { ZodSchema, ZodError } from "zod";
+import type { ZodSchema } from "zod";
 
 /**
  * Validation result abstraction.

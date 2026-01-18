@@ -6,6 +6,7 @@ import {
  ColumnDefinitionSchema,
  PageLayoutSchema,
  PlacedSectionSchema,
+ type ResumeAst,
 } from "../ast/resume-ast.schema";
 import {
  completeResumeAst,
@@ -167,8 +168,8 @@ describe("resume-ast.schema", () => {
     columnGapMm: 5,
    };
 
-   const result = PageLayoutSchema.parse(layout);
-   expect(result).toEqual(layout);
+   const _result = PageLayoutSchema.parse(layout);
+   expect(_result).toEqual(layout);
   });
 
   it("should validate single column layout", () => {
@@ -240,8 +241,8 @@ describe("resume-ast.schema", () => {
     },
    };
 
-   const result = PlacedSectionSchema.parse(section);
-   expect(result).toEqual(section);
+   const _result = PlacedSectionSchema.parse(section);
+   expect(_result).toEqual(section);
   });
 
   it("should enforce required style fields", () => {
@@ -368,7 +369,7 @@ describe("resume-ast.schema", () => {
   });
 
   it("should reject invalid resume ASTs", () => {
-   invalidResumeAsts.forEach(({ description, data }) => {
+   invalidResumeAsts.forEach(({ description: _description, data }) => {
     expect(() => ResumeAstSchema.parse(data)).toThrow();
    });
   });
@@ -396,17 +397,17 @@ describe("resume-ast.schema", () => {
   });
 
   it("should provide correct TypeScript types", () => {
-   const ast = ResumeAstSchema.parse(completeResumeAst);
+   const ast: ResumeAst = ResumeAstSchema.parse(completeResumeAst);
 
    const version: string = ast.meta.version;
-   const widthMm: number = ast.page.widthMm;
-   const sections: Array<any> = ast.sections;
-   const background: string = ast.globalStyles.background;
+   const _widthMm: number = ast.page.widthMm;
+   const sections: ResumeAst["sections"] = ast.sections;
+   const _background: string = ast.globalStyles.background;
 
    expect(version).toBe("1.0.0");
-   expect(widthMm).toBe(210);
+   expect(_widthMm).toBe(210);
    expect(sections.length).toBe(2);
-   expect(background).toBe("#ffffff");
+   expect(_background).toBe("#ffffff");
   });
 
   it("should validate ISO date format in meta", () => {
@@ -520,8 +521,8 @@ describe("resume-ast.schema", () => {
    };
    complexAst.sections[1].data = { type: "skills", items: [] };
 
-   const result = ResumeAstSchema.parse(complexAst);
-   expect(result).toEqual(complexAst);
+   const _result = ResumeAstSchema.parse(complexAst);
+   expect(_result).toEqual(complexAst);
   });
  });
 });

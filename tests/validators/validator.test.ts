@@ -9,7 +9,7 @@
  */
 
 import { describe, it, expect } from "bun:test";
-import { z } from "zod";
+import { z, ZodError } from "zod";
 import { validate, validateOrThrow } from "../../src/validators/validator";
 
 describe("validate()", () => {
@@ -198,9 +198,12 @@ describe("validateOrThrow()", () => {
     try {
       validateOrThrow(schema, { email: "invalid" });
       expect.unreachable("Should have thrown");
-    } catch (error: any) {
-      expect(error.errors).toBeDefined();
-      expect(error.errors[0].path).toContain("email");
+    } catch (error) {
+      expect(error).toBeInstanceOf(ZodError);
+      if (error instanceof ZodError) {
+        expect(error.errors).toBeDefined();
+        expect(error.errors[0].path).toContain("email");
+      }
     }
   });
 });

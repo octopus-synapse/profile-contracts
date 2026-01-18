@@ -6,7 +6,6 @@
  */
 
 import { z } from "zod";
-import { EmailSchema } from "../schemas/primitives";
 import { UsernameSchema } from "../validations/username.schema";
 
 // Local schemas

@@ -171,7 +171,7 @@ describe("ConsentRecordSchema", () => {
   });
 
   it("should reject missing required fields", () => {
-   const { id, ...recordWithoutId } = validRecord;
+   const { id: _id, ...recordWithoutId } = validRecord;
    expect(() => ConsentRecordSchema.parse(recordWithoutId)).toThrow();
   });
  });
@@ -200,14 +200,14 @@ describe("AcceptConsentResponseSchema", () => {
  });
 
  it("should reject missing message", () => {
-  const { message, ...responseWithoutMessage } = validResponse;
+  const { message: _message, ...responseWithoutMessage } = validResponse;
   expect(() =>
    AcceptConsentResponseSchema.parse(responseWithoutMessage)
   ).toThrow();
  });
 
  it("should reject missing consent", () => {
-  const { consent, ...responseWithoutConsent } = validResponse;
+  const { consent: _consent, ...responseWithoutConsent } = validResponse;
   expect(() =>
    AcceptConsentResponseSchema.parse(responseWithoutConsent)
   ).toThrow();
@@ -263,7 +263,7 @@ describe("ConsentStatusSchema", () => {
 
  describe("Invalid status", () => {
   it("should reject missing tosAccepted", () => {
-   const { tosAccepted, ...statusWithoutTos } = validStatus;
+   const { tosAccepted: _tosAccepted, ...statusWithoutTos } = validStatus;
    expect(() => ConsentStatusSchema.parse(statusWithoutTos)).toThrow();
   });
 
@@ -273,7 +273,7 @@ describe("ConsentStatusSchema", () => {
   });
 
   it("should reject missing version fields", () => {
-   const { latestTosVersion, ...statusWithoutVersion } = validStatus;
+   const { latestTosVersion: _latestTosVersion, ...statusWithoutVersion } = validStatus;
    expect(() => ConsentStatusSchema.parse(statusWithoutVersion)).toThrow();
   });
  });

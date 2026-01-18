@@ -1,5 +1,5 @@
 import { describe, it, expect } from "bun:test";
-import { ResumeDslSchema } from "../dsl/resume-dsl.schema";
+import { ResumeDslSchema, type ResumeDsl } from "../dsl/resume-dsl.schema";
 import {
  completeResumeDsl,
  minimalResumeDsl,
@@ -142,7 +142,7 @@ describe("resume-dsl.schema", () => {
   });
 
   it("should reject invalid resume DSLs", () => {
-   invalidResumeDsls.forEach(({ description, data }) => {
+   invalidResumeDsls.forEach(({ description: _description, data }) => {
     expect(() => ResumeDslSchema.parse(data)).toThrow();
    });
   });
@@ -211,13 +211,13 @@ describe("resume-dsl.schema", () => {
   });
 
   it("should provide correct TypeScript types", () => {
-   const dsl = ResumeDslSchema.parse(completeResumeDsl);
+   const dsl: ResumeDsl = ResumeDslSchema.parse(completeResumeDsl);
 
    const version: string = dsl.version;
    const layoutType: string = dsl.layout.type;
    const fontSize: string = dsl.tokens.typography.fontSize;
-   const sections: Array<any> = dsl.sections;
-   const itemOverrides: Record<string, any> | undefined = dsl.itemOverrides;
+   const sections: ResumeDsl["sections"] = dsl.sections;
+   const itemOverrides: ResumeDsl["itemOverrides"] = dsl.itemOverrides;
 
    expect(version).toBe("1.0.0");
    expect(layoutType).toBe("two-column");

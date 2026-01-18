@@ -153,7 +153,7 @@ describe("layout.schema", () => {
   });
 
   it("should reject invalid layouts", () => {
-   invalidLayouts.forEach(({ description, data }) => {
+   invalidLayouts.forEach(({ description: _description, data }) => {
     expect(() => LayoutConfigSchema.parse(data)).toThrow();
    });
   });

@@ -278,7 +278,7 @@ describe("tokens.schema", () => {
   });
 
   it("should reject invalid design tokens", () => {
-   invalidDesignTokens.forEach(({ description, data }) => {
+   invalidDesignTokens.forEach(({ description: _description, data }) => {
     expect(() => DesignTokensSchema.parse(data)).toThrow();
    });
   });

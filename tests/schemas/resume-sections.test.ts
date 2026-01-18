@@ -9,76 +9,33 @@ import { describe, expect, test } from "bun:test";
 
 // Core Sections
 import {
- ExperienceBaseSchema,
  CreateExperienceSchema,
  UpdateExperienceSchema,
  ExperienceSchema,
- EducationBaseSchema,
  CreateEducationSchema,
- UpdateEducationSchema,
- EducationSchema,
- SkillBaseSchema,
  CreateSkillSchema,
- UpdateSkillSchema,
- SkillSchema,
  BulkCreateSkillsSchema,
- LanguageBaseSchema,
  CreateLanguageSchema,
- UpdateLanguageSchema,
- LanguageSchema,
- CertificationBaseSchema,
  CreateCertificationSchema,
- UpdateCertificationSchema,
- CertificationSchema,
- ProjectBaseSchema,
  CreateProjectSchema,
- UpdateProjectSchema,
- ProjectSchema,
 } from "../../src/schemas/resume/sections";
 
 // Advanced Sections
 import {
  AchievementTypeSchema,
- AchievementBaseSchema,
  CreateAchievementSchema,
- UpdateAchievementSchema,
- AchievementSchema,
- AwardBaseSchema,
  CreateAwardSchema,
- UpdateAwardSchema,
- AwardSchema,
  SeverityLevelSchema,
- BugBountyBaseSchema,
  CreateBugBountySchema,
- UpdateBugBountySchema,
- BugBountySchema,
- HackathonBaseSchema,
  CreateHackathonSchema,
- UpdateHackathonSchema,
- HackathonSchema,
- InterestBaseSchema,
  CreateInterestSchema,
- UpdateInterestSchema,
- InterestSchema,
  OpenSourceRoleSchema,
- OpenSourceBaseSchema,
  CreateOpenSourceSchema,
- UpdateOpenSourceSchema,
- OpenSourceSchema,
  PublicationTypeSchema,
- PublicationBaseSchema,
  CreatePublicationSchema,
- UpdatePublicationSchema,
- PublicationSchema,
- RecommendationBaseSchema,
  CreateRecommendationSchema,
- UpdateRecommendationSchema,
- RecommendationSchema,
  EventTypeSchema,
- TalkBaseSchema,
  CreateTalkSchema,
- UpdateTalkSchema,
- TalkSchema,
 } from "../../src/schemas/resume/sections";
 
 // ============================================================================
@@ -117,7 +74,7 @@ describe("Experience Schema", () => {
  });
 
  test("requires startDate", () => {
-  const { startDate, ...invalid } = validExperience;
+  const { startDate: _startDate, ...invalid } = validExperience;
   const result = CreateExperienceSchema.safeParse(invalid);
   expect(result.success).toBe(false);
  });
@@ -198,7 +155,7 @@ describe("Education Schema", () => {
  });
 
  test("allows current education without endDate", () => {
-  const { endDate, ...current } = validEducation;
+  const { endDate: _endDate, ...current } = validEducation;
   const result = CreateEducationSchema.safeParse({
    ...current,
    current: true,
@@ -408,7 +365,7 @@ describe("Achievement Schema", () => {
  });
 
  test("requires type", () => {
-  const { type, ...invalid } = validAchievement;
+  const { type: _type, ...invalid } = validAchievement;
   const result = CreateAchievementSchema.safeParse(invalid);
   expect(result.success).toBe(false);
  });

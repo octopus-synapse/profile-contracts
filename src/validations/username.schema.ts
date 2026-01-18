@@ -78,7 +78,7 @@ export const UsernameSchema = z
  .regex(/^[a-z0-9]/, "Username must start with a letter or number")
  .regex(/[a-z0-9]$/, "Username must end with a letter or number")
  .regex(/^(?!.*__)/, "Username cannot contain consecutive underscores")
- .refine((username) => !RESERVED_USERNAMES.includes(username as any), {
+ .refine((username) => !(RESERVED_USERNAMES as readonly string[]).includes(username), {
   message: "This username is reserved",
  });
 

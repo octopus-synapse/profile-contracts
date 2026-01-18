@@ -197,17 +197,17 @@ describe("User DTOs", () => {
   });
 
   it("should apply defaults", () => {
-   const result = AdminUserFiltersSchema.parse({});
-   expect(result.page).toBe(1);
-   expect(result.limit).toBe(20);
-   expect(result.sortBy).toBe("createdAt");
-   expect(result.sortOrder).toBe("desc");
+   const _result = AdminUserFiltersSchema.parse({});
+   expect(_result.page).toBe(1);
+   expect(_result.limit).toBe(20);
+   expect(_result.sortBy).toBe("createdAt");
+   expect(_result.sortOrder).toBe("desc");
   });
 
   it("should coerce string numbers", () => {
-   const result = AdminUserFiltersSchema.parse({ page: "5", limit: "50" });
-   expect(result.page).toBe(5);
-   expect(result.limit).toBe(50);
+   const _result = AdminUserFiltersSchema.parse({ page: "5", limit: "50" });
+   expect(_result.page).toBe(5);
+   expect(_result.limit).toBe(50);
   });
 
   it("should reject invalid role", () => {
@@ -329,9 +329,9 @@ describe("Resume DTOs", () => {
   });
 
   it("should apply defaults", () => {
-   const result = CreateResumeSchema.parse({ title: "My Resume" });
-   expect(result.template).toBe("PROFESSIONAL");
-   expect(result.isPublic).toBe(false);
+   const _result = CreateResumeSchema.parse({ title: "My Resume" });
+   expect(_result.template).toBe("PROFESSIONAL");
+   expect(_result.isPublic).toBe(false);
   });
 
   it("should accept complete resume", () => {

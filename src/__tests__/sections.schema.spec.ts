@@ -138,7 +138,7 @@ describe("sections.schema", () => {
   });
 
   it("should reject invalid section configs", () => {
-   invalidSectionConfigs.forEach(({ description, data }) => {
+   invalidSectionConfigs.forEach(({ description: _description, data }) => {
     expect(() => SectionConfigSchema.parse(data)).toThrow();
    });
   });

@@ -5,7 +5,7 @@
  * These types represent API contracts between frontend and backend.
  */
 
-import { describe, it, expect, beforeEach } from "bun:test";
+import { describe, it, expect } from "bun:test";
 import {
  UserSchema,
  UserProfileSchema,
@@ -14,7 +14,6 @@ import {
  AuthTokensSchema,
  AuthResponseSchema,
  RefreshTokenResponseSchema,
- ResumeSchema,
  ResumeExperienceSchema,
  ResumeEducationSchema,
  ResumeSkillSchema,
@@ -163,7 +162,7 @@ describe("Auth Types", () => {
 
  describe("AuthResponseSchema", () => {
   it("should validate complete auth response", () => {
-   const response = {
+   const _response = {
     user: {
      id: "550e8400-e29b-41d4-a716-446655440000",
      email: "user@example.com",
@@ -175,7 +174,7 @@ describe("Auth Types", () => {
      expiresIn: 3600,
     },
    };
-   expect(() => AuthResponseSchema.parse(response)).not.toThrow();
+   expect(() => AuthResponseSchema.parse(_response)).not.toThrow();
   });
 
   it("should accept APPROVER role in response", () => {
@@ -297,13 +296,13 @@ describe("API Types", () => {
  describe("ApiResponseSchema", () => {
   it("should create typed response schema", () => {
    const StringResponseSchema = ApiResponseSchema(z.string());
-   const response = { success: true, data: "hello", message: "OK" };
-   expect(() => StringResponseSchema.parse(response)).not.toThrow();
+   const _response = { success: true, data: "hello", message: "OK" };
+   expect(() => StringResponseSchema.parse(_response)).not.toThrow();
   });
 
   it("should work with complex data types", () => {
    const UserResponseSchema = ApiResponseSchema(UserSchema);
-   const response = {
+   const _response = {
     success: true,
     data: {
      id: "550e8400-e29b-41d4-a716-446655440000",
@@ -318,13 +317,13 @@ describe("API Types", () => {
      updatedAt: "2025-01-01T00:00:00.000Z",
     },
    };
-   expect(() => UserResponseSchema.parse(response)).not.toThrow();
+   expect(() => UserResponseSchema.parse(_response)).not.toThrow();
   });
  });
 
  describe("ApiErrorResponseSchema", () => {
   it("should validate error response", () => {
-   const error = {
+   const _error = {
     success: false,
     error: {
      code: "VALIDATION_ERROR",
@@ -332,14 +331,14 @@ describe("API Types", () => {
      details: { field: "email", issue: "required" },
     },
    };
-   expect(() => ApiErrorResponseSchema.parse(error)).not.toThrow();
+   expect(() => ApiErrorResponseSchema.parse(_error)).not.toThrow();
   });
  });
 
  describe("PaginatedResponseSchema", () => {
   it("should create typed paginated schema", () => {
    const PaginatedStringsSchema = PaginatedResponseSchema(z.string());
-   const response = {
+   const _response = {
     items: ["a", "b", "c"],
     total: 100,
     page: 1,
@@ -348,7 +347,7 @@ describe("API Types", () => {
     hasNext: true,
     hasPrevious: false,
    };
-   expect(() => PaginatedStringsSchema.parse(response)).not.toThrow();
+   expect(() => PaginatedStringsSchema.parse(_response)).not.toThrow();
   });
  });
 
