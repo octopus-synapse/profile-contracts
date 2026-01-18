@@ -68,3 +68,6 @@ export * from "./validations/env.schema";
 
 // Generated (Prisma sync)
 export * from "./generated/prisma-enums";
+
+// Domain Errors (framework-agnostic exceptions)
+export * from "./errors";
