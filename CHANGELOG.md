@@ -1,5 +1,20 @@
 # Changelog
 
+## [4.1.0](https://github.com/octopus-synapse/profile-contracts/compare/v4.0.1...v4.1.0) (2026-01-18)
+
+
+### Features
+
+* **errors:** implement domain exception system ([bc5ba7a](https://github.com/octopus-synapse/profile-contracts/commit/bc5ba7a3a6e7fbee93fbf6714c116e4970d2e15c))
+
+
+### Bug Fixes
+
+* **eslint:** eslint config added ([6820b02](https://github.com/octopus-synapse/profile-contracts/commit/6820b024d164e907d0711d889f5a23fb6b2c2e6c))
+* **release:** disable CI checks wait - CI runs on same commit ([4840c54](https://github.com/octopus-synapse/profile-contracts/commit/4840c542c42d67457172f11ade3554306f7ea267))
+* **release:** use correct CI check names for workflow jobs ([0fd7704](https://github.com/octopus-synapse/profile-contracts/commit/0fd77043f3b85522c72148704bb5ba7e241c43b0))
+* **release:** use lowercase ci check names ([6011fc4](https://github.com/octopus-synapse/profile-contracts/commit/6011fc42661c7a51727602f06e97985ed651205b))
+
 ## [4.0.1](https://github.com/octopus-synapse/profile-contracts/compare/v4.0.0...v4.0.1) (2026-01-16)
 
 
