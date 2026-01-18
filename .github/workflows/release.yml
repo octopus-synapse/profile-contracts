@@ -16,7 +16,7 @@ jobs:
         uses: octopus-synapse/octopus-workflows/.github/workflows/release-npm-package.yml@main
         with:
             package-name: "@octopus-synapse/profile-contracts"
-            ci-check-names: "CI"
+            ci-check-names: "CI / Code Quality,CI / Tests,CI / Build"
             bun-version: "latest"
         secrets:
             GH_PAT: ${{ secrets.GITHUB_TOKEN }}
