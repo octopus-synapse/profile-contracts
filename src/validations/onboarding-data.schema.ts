@@ -9,7 +9,7 @@
  */
 
 import { z } from "zod";
-import { EmailSchema } from "../schemas/primitives";
+import { EmailSchema } from "../domain/schemas/primitives";
 import { UsernameSchema } from "./username.schema";
 import { ProfessionalProfileSchema } from "./professional-profile.schema";
 

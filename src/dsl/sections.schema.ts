@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const SectionIdSchema = z.string(); // e.g., 'summary', 'experience', 'education'
+export const SectionIdSchema = z.string();
 export const ColumnIdSchema = z.enum(["main", "sidebar", "full-width"]);
 
 export const SectionConfigSchema = z.object({
@@ -18,7 +18,7 @@ export const ItemOverrideSchema = z.object({
 
 export const SectionItemOverridesSchema = z.record(
  SectionIdSchema,
- z.array(ItemOverrideSchema)
+ z.array(ItemOverrideSchema),
 );
 
 export type SectionConfig = z.infer<typeof SectionConfigSchema>;

@@ -1,9 +1,8 @@
 import { z } from "zod";
 
-// Base schemas for common data types
 export const DateRangeSchema = z.object({
- startDate: z.string(), // ISO date
- endDate: z.string().optional(), // ISO date or undefined (current)
+ startDate: z.string(),
+ endDate: z.string().optional(),
  isCurrent: z.boolean(),
 });
 
@@ -13,7 +12,6 @@ export const LocationSchema = z.object({
  remote: z.boolean().optional(),
 });
 
-// Section-specific item schemas
 export const ExperienceItemSchema = z.object({
  id: z.string(),
  title: z.string(),
@@ -39,8 +37,8 @@ export const EducationItemSchema = z.object({
 export const SkillItemSchema = z.object({
  id: z.string(),
  name: z.string(),
- level: z.string().optional(), // "Beginner", "Intermediate", "Expert"
- category: z.string().optional(), // "Languages", "Frameworks"
+ level: z.string().optional(),
+ category: z.string().optional(),
 });
 
 export const ProjectItemSchema = z.object({
@@ -49,6 +47,7 @@ export const ProjectItemSchema = z.object({
  role: z.string().optional(),
  dateRange: DateRangeSchema.optional(),
  url: z.string().optional(),
+ repositoryUrl: z.string().optional(),
  description: z.string().optional(),
  highlights: z.array(z.string()),
  technologies: z.array(z.string()),
@@ -57,7 +56,7 @@ export const ProjectItemSchema = z.object({
 export const LanguageItemSchema = z.object({
  id: z.string(),
  name: z.string(),
- proficiency: z.string(), // "Native", "Fluent", "B2"
+ proficiency: z.string(),
 });
 
 export const CertificationItemSchema = z.object({
@@ -108,12 +107,10 @@ export const PublicationItemSchema = z.object({
  description: z.string().optional(),
 });
 
-// Generic text section (summary, objective)
 export const TextSectionDataSchema = z.object({
  content: z.string(),
 });
 
-// Discriminated union for section data
 export const SectionDataSchema = z.discriminatedUnion("type", [
  z.object({
   type: z.literal("experience"),

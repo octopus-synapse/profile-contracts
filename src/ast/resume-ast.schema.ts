@@ -1,36 +1,35 @@
 import { z } from "zod";
 import { SectionDataSchema } from "./section-data.schema";
 
-// Resolved Style Values (Concrete values, not tokens)
 export const ResolvedTypographySchema = z.object({
- fontFamily: z.string(), // e.g., "Inter, sans-serif"
+ fontFamily: z.string(),
  fontSizePx: z.number(),
  lineHeight: z.number(),
- fontWeight: z.number(), // 400, 700
+ fontWeight: z.number(),
  textTransform: z.enum(["none", "uppercase", "lowercase", "capitalize"]),
  textDecoration: z.enum(["none", "underline", "line-through"]),
 });
 
 export const ResolvedBoxStyleSchema = z.object({
- backgroundColor: z.string(), // Hex
+ backgroundColor: z.string(),
  borderColor: z.string(),
  borderWidthPx: z.number(),
  borderRadiusPx: z.number(),
  paddingPx: z.number(),
  marginBottomPx: z.number(),
- shadow: z.string().optional(), // CSS box-shadow string
+ shadow: z.string().optional(),
 });
 
 // Layout Structure
 export const ColumnDefinitionSchema = z.object({
- id: z.string(), // 'main', 'sidebar'
- widthPercentage: z.number(), // 70, 30
+ id: z.string(),
+ widthPercentage: z.number(),
  order: z.number(),
 });
 
 export const PageLayoutSchema = z.object({
- widthMm: z.number(), // 210 for A4
- heightMm: z.number(), // 297 for A4
+ widthMm: z.number(),
+ heightMm: z.number(),
  marginTopMm: z.number(),
  marginBottomMm: z.number(),
  marginLeftMm: z.number(),
@@ -39,13 +38,11 @@ export const PageLayoutSchema = z.object({
  columnGapMm: z.number(),
 });
 
-// Content Placement
 export const PlacedSectionSchema = z.object({
  sectionId: z.string(),
- columnId: z.string(), // Reference to ColumnDefinition.id
+ columnId: z.string(),
  order: z.number(),
- data: SectionDataSchema, // Resolved data for this section
- // Resolved styles for this specific section instance
+ data: SectionDataSchema,
  styles: z.object({
   container: ResolvedBoxStyleSchema,
   title: ResolvedTypographySchema,
@@ -56,7 +53,7 @@ export const PlacedSectionSchema = z.object({
 export const ResumeAstSchema = z.object({
  meta: z.object({
   version: z.string(),
-  generatedAt: z.string(), // ISO date
+  generatedAt: z.string(),
  }),
  page: PageLayoutSchema,
  sections: z.array(PlacedSectionSchema),
@@ -68,7 +65,6 @@ export const ResumeAstSchema = z.object({
  }),
 });
 
-// Export all types for frontend consumption
 export type ResumeAst = z.infer<typeof ResumeAstSchema>;
 export type PlacedSection = z.infer<typeof PlacedSectionSchema>;
 export type PageLayout = z.infer<typeof PageLayoutSchema>;

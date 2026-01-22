@@ -20,7 +20,7 @@ Used by:
 ## Installation
 
 ```bash
-npm install @octopus-synapse/profile-contracts
+bun add @octopus-synapse/profile-contracts
 ```
 
 ## Usage
@@ -170,13 +170,13 @@ import { UserLocation } from "@octopus-synapse/profile-contracts";
 
 ```bash
 # Install dependencies
-npm install
+bun install
 
 # Build
-npm run build
+bun run build
 
 # Run tests
-npm test
+bun test
 ```
 
 ## License
