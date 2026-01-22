@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.8](https://github.com/octopus-synapse/profile-contracts/compare/v0.0.7...v0.0.8) (2026-01-22)
+
+
+### Miscellaneous Chores
+
+* trigger release with GH_PAT fix ([17f49d9](https://github.com/octopus-synapse/profile-contracts/commit/17f49d9e73190d80735e99f5823c01d8a6d7c59c))
+
 ## [0.0.7](https://github.com/octopus-synapse/profile-contracts/compare/v0.0.6...v0.0.7) (2026-01-22)
 
 
