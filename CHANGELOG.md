@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.0.1](https://github.com/octopus-synapse/profile-contracts/compare/v5.0.0...v5.0.1) (2026-01-22)
+
+
+### Bug Fixes
+
+* workflow npm publish trigger ([5975cc7](https://github.com/octopus-synapse/profile-contracts/commit/5975cc799c8a4b99721c09700139ef59161b9776))
+
 ## [5.0.0](https://github.com/octopus-synapse/profile-contracts/compare/v4.1.0...v5.0.0) (2026-01-22)
 
 
@@ -198,4 +205,3 @@
 
 ### Fixed
 - Workflow npm publish authentication
-
