@@ -48,6 +48,7 @@ jobs:
       - name: Publish to GitHub Packages
         run: |
           echo "🚀 Publishing v${{ steps.version.outputs.version }} to GitHub Packages..."
+          npm pkg delete scripts.prepare
           bun publish --registry https://npm.pkg.github.com
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
