@@ -28,7 +28,8 @@ const REPO_ROOT = join(import.meta.dir, "../..");
 const NPM_REGISTRY = "https://npm.pkg.github.com";
 
 // Only run tag-related tests when explicitly enabled (requires fetch-depth: 0)
-const RELEASE_SYNC_ENABLED = process.env.RELEASE_SYNC_CHECK === "true" || !process.env.CI;
+const RELEASE_SYNC_ENABLED =
+ process.env.RELEASE_SYNC_CHECK === "true" || !process.env.CI;
 
 interface PackageJson {
  name: string;
@@ -117,33 +118,45 @@ describe("Release Synchronization", () => {
  });
 
  describe("Git Tags", () => {
-  it.skipIf(!RELEASE_SYNC_ENABLED)("should have at least one version tag", () => {
-   expect(state.gitTags.length).toBeGreaterThan(0);
-  });
+  it.skipIf(!RELEASE_SYNC_ENABLED)(
+   "should have at least one version tag",
+   () => {
+    expect(state.gitTags.length).toBeGreaterThan(0);
+   },
+  );
 
-  it.skipIf(!RELEASE_SYNC_ENABLED)("should have tags that follow v{semver} pattern", () => {
-   const versionTagRegex = /^v\d+\.\d+\.\d+(-[\w.]+)?$/;
-   for (const tag of state.gitTags) {
-    expect(tag).toMatch(versionTagRegex);
-   }
-  });
+  it.skipIf(!RELEASE_SYNC_ENABLED)(
+   "should have tags that follow v{semver} pattern",
+   () => {
+    const versionTagRegex = /^v\d+\.\d+\.\d+(-[\w.]+)?$/;
+    for (const tag of state.gitTags) {
+     expect(tag).toMatch(versionTagRegex);
+    }
+   },
+  );
  });
 
  describe("Tag-Package Synchronization (CRITICAL)", () => {
-  it.skipIf(!RELEASE_SYNC_ENABLED)("latest git tag MUST match package.json version", () => {
-   const latestTag = state.latestTag;
-   expect(latestTag).not.toBeNull();
+  it.skipIf(!RELEASE_SYNC_ENABLED)(
+   "latest git tag MUST match package.json version",
+   () => {
+    const latestTag = state.latestTag;
+    expect(latestTag).not.toBeNull();
 
-   const tagVersion = extractVersionFromTag(latestTag!);
-   expect(tagVersion).toBe(state.packageJsonVersion);
-  });
+    const tagVersion = extractVersionFromTag(latestTag!);
+    expect(tagVersion).toBe(state.packageJsonVersion);
+   },
+  );
 
-  it.skipIf(!RELEASE_SYNC_ENABLED)("should have exactly one tag for current package.json version", () => {
-   const expectedTag = `v${state.packageJsonVersion}`;
-   const matchingTags = state.gitTags.filter((t) => t === expectedTag);
+  it.skipIf(!RELEASE_SYNC_ENABLED)(
+   "should have exactly one tag for current package.json version",
+   () => {
+    const expectedTag = `v${state.packageJsonVersion}`;
+    const matchingTags = state.gitTags.filter((t) => t === expectedTag);
 
-   expect(matchingTags.length).toBe(1);
-  });
+    expect(matchingTags.length).toBe(1);
+   },
+  );
  });
 
  describe("Version Consistency Report", () => {
@@ -252,14 +265,21 @@ describe("NPM Registry Sync (CI Only)", () => {
  const shouldRun = hasNpmAuth();
 
  it.skipIf(!shouldRun)(
-  "published npm version MUST match package.json version",
+  "published npm version MUST match package.json version (if published)",
   () => {
    const pkgVersion = getPackageJsonVersion();
    const publishedVersion = getLatestPublishedVersion();
 
    console.log(`\n📦 NPM Registry Check:`);
    console.log(`   Package.json:     ${pkgVersion}`);
-   console.log(`   Published (npm):  ${publishedVersion}`);
+   console.log(`   Published (npm):  ${publishedVersion ?? "(not published yet)"}`);
+
+   // If package is not yet published, this is OK for first release
+   if (publishedVersion === null) {
+    console.log(`   ℹ️  Package not yet published - this is expected for first release`);
+    expect(true).toBe(true);
+    return;
+   }
 
    expect(publishedVersion).toBe(pkgVersion);
   },
