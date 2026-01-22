@@ -19,4 +19,5 @@ jobs:
             wait-for-ci-checks: false
             bun-version: "latest"
         secrets:
-            GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+            # Use org-level GH_PAT secret with write:packages permission
+            GH_PAT: ${{ secrets.GH_PAT }}
