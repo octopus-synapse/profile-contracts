@@ -33,7 +33,11 @@ jobs:
                   fetch-tags: true
 
             - name: Fetch all tags explicitly
-              run: git fetch --tags --force
+              run: |
+                  git fetch --tags --force origin
+                  echo "Listing all tags:"
+                  git tag -l
+
 
             - uses: oven-sh/setup-bun@v2
               with:
