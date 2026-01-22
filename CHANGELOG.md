@@ -1,20 +1,5 @@
 # Changelog
 
-## [0.0.5](https://github.com/octopus-synapse/profile-contracts/compare/v0.0.4...v0.0.5) (2026-01-22)
-
-
-### Bug Fixes
-
-* **ci:** ensure tags are fetched for release-sync checks ([e63afc2](https://github.com/octopus-synapse/profile-contracts/commit/e63afc24092b833801d2ea5b73dc9d931be00cc4))
-* **workflow:** add packages:read permission to caller workflow ([139897b](https://github.com/octopus-synapse/profile-contracts/commit/139897bc7b57a5fc882aa19f6169ce9fcb7a61fd))
-
-
-### Tests
-
-* verify all checks with tag synced ([a6f5964](https://github.com/octopus-synapse/profile-contracts/commit/a6f59645c67bfb5614cd42e76f4deaf902afdd2d))
-* verify cleanup with packages:read permission ([7f56858](https://github.com/octopus-synapse/profile-contracts/commit/7f5685878495213b750683d3175adca3cf161e96))
-* verify sync after manual publish ([8101681](https://github.com/octopus-synapse/profile-contracts/commit/8101681cfd689c67ae7e9dfaf9f35b64fa95a598))
-
 ## [0.0.4](https://github.com/octopus-synapse/profile-contracts/compare/v0.0.3...v0.0.4) (2026-01-22)
 
 
