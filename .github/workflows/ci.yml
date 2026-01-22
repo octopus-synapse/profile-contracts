@@ -22,3 +22,34 @@ jobs:
             build-output-dir: "dist"
         secrets:
             NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    release-sync-check:
+        name: Release Sync Verification
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: "latest"
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  registry-url: "https://npm.pkg.github.com"
+                  scope: "@octopus-synapse"
+
+            - name: Install dependencies
+              run: bun install --frozen-lockfile
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Run Release Sync Tests
+              run: bun test src/__tests__/release-sync.test.ts
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Verify Release Sync (Script)
+              run: bash scripts/verify-release-sync.sh

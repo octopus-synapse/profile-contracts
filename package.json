@@ -1,68 +1,68 @@
 {
-  "name": "@octopus-synapse/profile-contracts",
-  "version": "0.0.1",
-  "description": "Shared domain contracts, schemas and types for Profile system - Clean Architecture",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./domain": {
-      "import": "./dist/domain/index.js",
-      "types": "./dist/domain/index.d.ts"
-    },
-    "./application": {
-      "import": "./dist/application/index.js",
-      "types": "./dist/application/index.d.ts"
-    }
+ "name": "@octopus-synapse/profile-contracts",
+ "version": "0.0.1",
+ "description": "Shared domain contracts, schemas and types for Profile system - Clean Architecture",
+ "main": "dist/index.js",
+ "module": "dist/index.js",
+ "types": "dist/index.d.ts",
+ "exports": {
+  ".": {
+   "import": "./dist/index.js",
+   "types": "./dist/index.d.ts"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+  "./domain": {
+   "import": "./dist/domain/index.js",
+   "types": "./dist/domain/index.d.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/octopus-synapse/profile-contracts.git"
-  },
-  "scripts": {
-    "build": "bun run tsc",
-    "test": "bun test",
-    "test:watch": "bun test --watch",
-    "test:coverage": "bun test --coverage",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint .",
-    "lint:fast": "oxlint src/",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "precommit": "bun run typecheck && bun run lint:fast && bun test",
-    "ci:lint": "bun run lint",
-    "ci:test": "bun run test",
-    "prepare": "husky"
-  },
-  "keywords": [
-    "profile",
-    "contracts",
-    "schema",
-    "zod"
-  ],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "zod": "^3.22.4"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^20.3.0",
-    "@commitlint/config-conventional": "^20.3.0",
-    "@eslint/js": "^9.18.0",
-    "@types/bun": "latest",
-    "@types/node": "^20.10.6",
-    "eslint": "^9.18.0",
-    "husky": "^9.1.7",
-    "oxlint": "^1.38.0",
-    "typescript": "^5.3.3",
-    "typescript-eslint": "^8.20.0"
+  "./application": {
+   "import": "./dist/application/index.js",
+   "types": "./dist/application/index.d.ts"
   }
+ },
+ "publishConfig": {
+  "registry": "https://npm.pkg.github.com"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/octopus-synapse/profile-contracts.git"
+ },
+ "scripts": {
+  "build": "bun run tsc",
+  "test": "bun test",
+  "test:watch": "bun test --watch",
+  "test:coverage": "bun test --coverage",
+  "typecheck": "tsc --noEmit",
+  "lint": "eslint .",
+  "lint:fast": "oxlint src/",
+  "lint:fix": "eslint . --fix",
+  "format": "prettier --write .",
+  "format:check": "prettier --check .",
+  "precommit": "bun run typecheck && bun run lint:fast && bun test",
+  "ci:lint": "bun run lint",
+  "ci:test": "bun run test",
+  "prepare": "husky"
+ },
+ "keywords": [
+  "profile",
+  "contracts",
+  "schema",
+  "zod"
+ ],
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+  "zod": "^3.22.4"
+ },
+ "devDependencies": {
+  "@commitlint/cli": "^20.3.0",
+  "@commitlint/config-conventional": "^20.3.0",
+  "@eslint/js": "^9.18.0",
+  "@types/bun": "latest",
+  "@types/node": "^20.10.6",
+  "eslint": "^9.18.0",
+  "husky": "^9.1.7",
+  "oxlint": "^1.38.0",
+  "typescript": "^5.3.3",
+  "typescript-eslint": "^8.20.0"
+ }
 }
