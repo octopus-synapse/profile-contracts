@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.9](https://github.com/octopus-synapse/profile-contracts/compare/v0.0.8...v0.0.9) (2026-01-22)
+
+
+### Bug Fixes
+
+* use GH_PAT org secret instead of GITHUB_TOKEN for npm publish ([7319686](https://github.com/octopus-synapse/profile-contracts/commit/7319686e8b723f96ca25e182a2e61dcd42c7181c))
+
 ## [0.0.8](https://github.com/octopus-synapse/profile-contracts/compare/v0.0.7...v0.0.8) (2026-01-22)
 
 
