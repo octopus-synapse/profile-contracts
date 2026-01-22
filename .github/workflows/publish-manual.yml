@@ -49,6 +49,7 @@ jobs:
         run: |
           echo "🚀 Publishing v${{ steps.version.outputs.version }} to GitHub Packages..."
           npm pkg delete scripts.prepare
-          bun publish --registry https://npm.pkg.github.com
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+          npm publish --registry https://npm.pkg.github.com --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
