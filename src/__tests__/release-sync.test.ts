@@ -54,12 +54,17 @@ function getGitTags(): string[] {
   const output = execSync("git tag -l 'v*'", {
    cwd: REPO_ROOT,
    encoding: "utf-8",
+   stdio: ["pipe", "pipe", "pipe"], // Capture stderr too
   });
   return output
    .split("\n")
-   .filter(Boolean)
-   .map((tag) => tag.trim());
- } catch {
+   .map((tag) => tag.trim())
+   .filter(Boolean); // Remove empty strings
+ } catch (error: any) {
+  console.error("Failed to get git tags:", error.message);
+  if (error.stderr) {
+   console.error("Git stderr:", error.stderr.toString());
+  }
   return [];
  }
 }
