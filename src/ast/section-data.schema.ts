@@ -164,7 +164,6 @@ export const SectionDataSchema = z.discriminatedUnion("type", [
   type: z.literal("objective"),
   data: TextSectionDataSchema,
  }),
- // Fallback for unknown sections
  z.object({
   type: z.literal("custom"),
   items: z.array(z.any()),
