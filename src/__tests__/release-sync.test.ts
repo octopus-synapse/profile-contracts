@@ -11,7 +11,11 @@
  * 4. Assert all are in sync
  *
  * Run locally: bun test src/__tests__/release-sync.test.ts
- * Run in CI: Automatically runs with NODE_AUTH_TOKEN for npm registry checks
+ * Run in CI: Set RELEASE_SYNC_CHECK=true to enable tag checks
+ *
+ * NOTE: These tests require fetch-depth: 0 in CI to access git tags.
+ * The general CI test run skips tag-related tests; only the dedicated
+ * release-sync-check job runs them with proper git history.
  */
 
 import { describe, it, expect, beforeAll } from "bun:test";
@@ -22,6 +26,9 @@ import { join } from "path";
 const PACKAGE_NAME = "@octopus-synapse/profile-contracts";
 const REPO_ROOT = join(import.meta.dir, "../..");
 const NPM_REGISTRY = "https://npm.pkg.github.com";
+
+// Only run tag-related tests when explicitly enabled (requires fetch-depth: 0)
+const RELEASE_SYNC_ENABLED = process.env.RELEASE_SYNC_CHECK === "true" || !process.env.CI;
 
 interface PackageJson {
  name: string;
@@ -110,11 +117,11 @@ describe("Release Synchronization", () => {
  });
 
  describe("Git Tags", () => {
-  it("should have at least one version tag", () => {
+  it.skipIf(!RELEASE_SYNC_ENABLED)("should have at least one version tag", () => {
    expect(state.gitTags.length).toBeGreaterThan(0);
   });
 
-  it("should have tags that follow v{semver} pattern", () => {
+  it.skipIf(!RELEASE_SYNC_ENABLED)("should have tags that follow v{semver} pattern", () => {
    const versionTagRegex = /^v\d+\.\d+\.\d+(-[\w.]+)?$/;
    for (const tag of state.gitTags) {
     expect(tag).toMatch(versionTagRegex);
@@ -123,7 +130,7 @@ describe("Release Synchronization", () => {
  });
 
  describe("Tag-Package Synchronization (CRITICAL)", () => {
-  it("latest git tag MUST match package.json version", () => {
+  it.skipIf(!RELEASE_SYNC_ENABLED)("latest git tag MUST match package.json version", () => {
    const latestTag = state.latestTag;
    expect(latestTag).not.toBeNull();
 
@@ -131,7 +138,7 @@ describe("Release Synchronization", () => {
    expect(tagVersion).toBe(state.packageJsonVersion);
   });
 
-  it("should have exactly one tag for current package.json version", () => {
+  it.skipIf(!RELEASE_SYNC_ENABLED)("should have exactly one tag for current package.json version", () => {
    const expectedTag = `v${state.packageJsonVersion}`;
    const matchingTags = state.gitTags.filter((t) => t === expectedTag);
 

@@ -50,6 +50,7 @@ jobs:
               run: bun test src/__tests__/release-sync.test.ts
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  RELEASE_SYNC_CHECK: "true"
 
             - name: Verify Release Sync (Script)
               run: bash scripts/verify-release-sync.sh
