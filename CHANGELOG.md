@@ -21,6 +21,48 @@
 * **test:** allow first release without existing npm package ([dc8e6c6](https://github.com/octopus-synapse/profile-contracts/commit/dc8e6c678e3446903537575687e300a8d6b826fe))
 
 
+### Reverts
+
+* rollback to 0.0.1 - tag v0.0.2 deleted due to sync failure ([41f5034](https://github.com/octopus-synapse/profile-contracts/commit/41f503493c54f26025b2a1f7c1d7d5d263291758))
+
+
+### Miscellaneous Chores
+
+* add release-please manifest at 0.0.1 ([81d5ba6](https://github.com/octopus-synapse/profile-contracts/commit/81d5ba6baecf8924bdc4215ccbdf09aff3c7d758))
+* **main:** release 0.0.2 ([#34](https://github.com/octopus-synapse/profile-contracts/issues/34)) ([07463ee](https://github.com/octopus-synapse/profile-contracts/commit/07463eeaada3a25a355de2003e239af1a1efbbc3))
+* set release-please last-release-sha to v0.0.1 ([a910d3f](https://github.com/octopus-synapse/profile-contracts/commit/a910d3f7d4505b5448aa213299819dd53ba67239))
+* test commit to verify release-please behavior ([25e6d7b](https://github.com/octopus-synapse/profile-contracts/commit/25e6d7b9d843393dd569adb84b3193740ba1dd43))
+* trigger release-please after config fix ([aa43e9d](https://github.com/octopus-synapse/profile-contracts/commit/aa43e9d1e69edcbf4efc4e9ba8bc60e89e996daa))
+* trigger release-please with correct baseline ([64fc5ca](https://github.com/octopus-synapse/profile-contracts/commit/64fc5ca58281880a357cd8415531579b69359362))
+* trigger with fixed workflow ([339224c](https://github.com/octopus-synapse/profile-contracts/commit/339224cdf6fd06910b91a33327bf4c85d86dd899))
+* unused comment removed ([aac92e6](https://github.com/octopus-synapse/profile-contracts/commit/aac92e6ef161ff27229190df5202b887ed374a95))
+
+
+### Continuous Integration
+
+* add manual publish workflow for version bootstrap ([8757e8c](https://github.com/octopus-synapse/profile-contracts/commit/8757e8c3df82c97487d15dbafabe01242f2e1c60))
+
+## [0.0.2](https://github.com/octopus-synapse/profile-contracts/compare/v0.0.1...v0.0.2) (2026-01-22)
+
+
+### Features
+
+* release 0.0.1 ([1a179f7](https://github.com/octopus-synapse/profile-contracts/commit/1a179f76fc8b576cd770c7d7d7907f546f7be70f))
+
+
+### Bug Fixes
+
+* **ci:** rely on setup-node for npm auth ([079a32e](https://github.com/octopus-synapse/profile-contracts/commit/079a32eb135b006f1407cda3495939f10a36f969))
+* **ci:** skip husky prepare in publish workflow ([918d2aa](https://github.com/octopus-synapse/profile-contracts/commit/918d2aa0b758031f40ce370a322f0fbb3193ae79))
+* **ci:** skip tag sync tests in shallow checkout ([c90cbf9](https://github.com/octopus-synapse/profile-contracts/commit/c90cbf98f5b852c610d37e8340370faa07f30423))
+* **ci:** use npm publish with proper auth for GitHub Packages ([3c6c100](https://github.com/octopus-synapse/profile-contracts/commit/3c6c1005e1b38333c981db5ad317cac68b117e29))
+* **release:** correct last-release-sha to actual commit (48aa42e) ([ca710cc](https://github.com/octopus-synapse/profile-contracts/commit/ca710cc032bcef94491645163240a982a33ec3b4))
+* **release:** move release-please configs to .github/ ([6c1f99c](https://github.com/octopus-synapse/profile-contracts/commit/6c1f99c03d626848b3a9394cf37bb4d36ac2deb0))
+* **release:** update last-release-sha to actual v0.0.1 commit ([4ed3603](https://github.com/octopus-synapse/profile-contracts/commit/4ed3603f75ed9be36ed0f9c26b9614f42f89526c))
+* **release:** use correct v0.0.1 tag commit SHA ([3fd8a02](https://github.com/octopus-synapse/profile-contracts/commit/3fd8a028419ec642e1a5565782a5e2f282e53f31))
+* **test:** allow first release without existing npm package ([dc8e6c6](https://github.com/octopus-synapse/profile-contracts/commit/dc8e6c678e3446903537575687e300a8d6b826fe))
+
+
 ### Miscellaneous Chores
 
 * add release-please manifest at 0.0.1 ([81d5ba6](https://github.com/octopus-synapse/profile-contracts/commit/81d5ba6baecf8924bdc4215ccbdf09aff3c7d758))
