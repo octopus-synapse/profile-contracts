@@ -187,3 +187,4 @@ UNLICENSED - Private package
 
 - [CHANGELOG](./CHANGELOG.md)
 - [GitHub Repository](https://github.com/octopus-synapse/profile-contracts)
+Test
