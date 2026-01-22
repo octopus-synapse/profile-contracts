@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.10](https://github.com/octopus-synapse/profile-contracts/compare/v0.0.9...v0.0.10) (2026-01-22)
+
+
+### Miscellaneous Chores
+
+* improve release sync test logging and trigger release ([53e6109](https://github.com/octopus-synapse/profile-contracts/commit/53e61090329f021ae9848b1859f364a0b21cab09))
+
 ## [0.0.9](https://github.com/octopus-synapse/profile-contracts/compare/v0.0.8...v0.0.9) (2026-01-22)
 
 
