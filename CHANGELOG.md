@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.3](https://github.com/octopus-synapse/profile-contracts/compare/v0.0.2...v0.0.3) (2026-01-22)
+
+
+### Tests
+
+* trigger cleanup workflow with clean state ([1b1da11](https://github.com/octopus-synapse/profile-contracts/commit/1b1da114655f8086d7e19f4e90d7602d4e4cb989))
+
 ## [0.0.2](https://github.com/octopus-synapse/profile-contracts/compare/v0.0.1...v0.0.2) (2026-01-22)
 
 
