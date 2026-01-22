@@ -3,7 +3,7 @@
   "bump-minor-pre-major": false,
   "bump-patch-for-minor-pre-major": true,
   "versioning": "always-bump-patch",
-  "last-release-sha": "1a179f76fc8b576cd770c7d7d7907f546f7be70f",
+  "last-release-sha": "48aa42e32a75cdafd02dda4df19a4af1eab39de9",
   "packages": {
     ".": {
       "release-type": "simple",
