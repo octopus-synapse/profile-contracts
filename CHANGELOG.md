@@ -193,3 +193,9 @@
 ### Performance Improvements
 
 * migrate from jest to bun for faster test execution ([2998ad2](https://github.com/octopus-synapse/profile-contracts/commit/2998ad25ae9c32f78f909f55102ec6517e0813b7))
+
+## [5.0.1] - Manual publish test
+
+### Fixed
+- Workflow npm publish authentication
+
